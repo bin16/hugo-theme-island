@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/test/</link>
+    <description>Recent content in Test on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Dec 2024 12:20:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Another Post</title>
+      <link>http://localhost:1313/post/2024/another-post/</link>
+      <pubDate>Thu, 26 Dec 2024 12:20:02 +0800</pubDate>
+      <guid>http://localhost:1313/post/2024/another-post/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus efficitur scelerisque sem fermentum auctor. Curabitur lacinia efficitur orci ac viverra. Nulla feugiat egestas nisl, vitae vehicula leo consequat maximus. Nunc commodo congue malesuada. Ut vehicula augue augue, ut efficitur leo commodo sit amet. Aliquam ac cursus nulla. Sed a felis justo. Curabitur eu velit ante. Suspendisse eget ultrices magna. Etiam vitae tortor bibendum, sollicitudin eros quis, accumsan tortor. Quisque tellus ipsum, interdum ac dolor vel, varius condimentum ante.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

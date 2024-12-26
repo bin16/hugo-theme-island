@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    {{ with resources.Get "css/main.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+</head>
+<body class="bg-gray-200 dark:bg-gray-800">
+
+    <nav class="p-4 bg-red-200 shadow-orange-200">
+        <div class="container mx-auto">
+
+            <div class="flex">
+
+                <h3>{{ .Title }}</h3>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container max-w-3xl md:mx-auto py-4 flex-col md:flex-row gap-4">
+        <div class="min-w-80"></div>
+        <main class="flex-1">
+            {{- block "main" . }}{{ end }}
+        </main>
+        <div class="min-w-80">
+            {{- block "side" . }}{{ end }}
+        </div>
+    </div>
+
+</body>
+</html>

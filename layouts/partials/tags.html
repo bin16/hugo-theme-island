@@ -1,0 +1,6 @@
+{{ with .GetTerms "tags" }}
+    {{ range . }}
+        <a href="{{ .RelPermalink }}" class="me-2 text-purple-700">#{{ .LinkTitle }}</a>
+    {{ end}}
+{{ end }}
+
