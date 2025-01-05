@@ -1,0 +1,16 @@
+<article class="p-6 bg-slate-100">
+    <header class="my-4">
+        <h1 class="text-4xl uppercase font-semibold">{{ .Title }}</h1>
+        <div class="py-2">
+            {{- partial "tags" . -}}
+        </div>
+    </header>
+
+    <div class="post-content text-lg text-slate-600">
+        {{ .Content }}
+    </div>
+
+    <footer>
+        {{- partial "tags" . -}}
+    </footer>
+</article>

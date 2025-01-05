@@ -1,0 +1,52 @@
+<article class="mb-8 flex items-stretch bg-slate-50 rounded-md shadow-sm shadow-slate-200 hover:shadow-xl transition-shadow ease-in-out">
+
+    {{ if .Params.cover.image }}
+        <figure class="w-1/2">
+            <a href="{{ .RelPermalink }}" class="block min-h-48 rounded-sm overflow-hidden">
+                {{ $img := .Resources.GetMatch .Params.cover.image }}
+                {{ if $img }}
+                    <img 
+                        class="block text-slate-500 bg-slate-300 w-full min-h-48 obj"
+                        src="{{ $img.RelPermalink }}" alt="fakeimg.pl" />
+                {{ else }}
+                <img 
+                    class="block text-slate-500 bg-slate-300 w-full"
+                    src="https://fakeimg.pl/640x480/" alt="fakeimg.pl" />
+                {{ end }}
+            </a>
+        </figure>
+    {{ else }}
+        <a class="block w-1/2 min-h-48 no-image" href="{{ .RelPermalink }}">
+
+        </a>
+    {{ end }}
+
+    <div class="w-1/2 flex flex-col justify-between px-4 py-6">
+        <div class="post-title">
+            <h3 class="text-4xl font-semibold uppercase">
+                <a class="text-neutral-950" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            
+            <div class="post-meta__tags my-2">
+                {{ partial "tags" . }}
+            </div>
+        </div>
+
+        <div class="post-meta">
+            
+
+            <p class="text-sm mb-1 text-neutral-500">
+                <a href="{{ .RelPermalink }}" class="hover:text-green-500">
+                    <time datetime="{{ .Date }}">
+                        {{ .Date.Format "2006-01-02 15:04:05" }}
+                    </time>
+                </a>
+            </p>
+
+        </div>
+
+    
+
+    </div>
+
+</article>
