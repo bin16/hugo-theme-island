@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <h1 class="title mb-4">{{ .Title }}</h1>
+    <div class="porse mb-4">
+        {{ .Content }}
+    </div>
+
+    <ul class="columns-1 lg:columns-2">
+
+        {{ range .Data.Terms.ByCount }}
+            <li class="panel mb-4 hover:bg-slate-200 transition-colors">
+                <a  
+                    href="{{ .Page.RelPermalink }}"
+                    class="flex justify-between items-center">
+                    <h2 class="title">
+                        <span class="text-slate-500">#</span>
+                        <span href="{{ .Page.RelPermalink }}">
+                            {{ .Page.LinkTitle }}
+                        </span>
+                    </h2>
+                    <span class="text-slate-400">({{ .Count }})</span>
+                </a>
+            </li>
+        {{ end }}
+
+    </ul>
+{{ end }}

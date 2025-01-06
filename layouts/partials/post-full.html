@@ -1,16 +1,35 @@
-<article class="p-6 bg-slate-100">
-    <header class="my-4">
-        <h1 class="text-4xl uppercase font-semibold">{{ .Title }}</h1>
-        <div class="py-2">
-            {{- partial "tags" . -}}
-        </div>
-    </header>
+<article class="p-8 mb-8">
 
-    <div class="post-content text-lg text-slate-600">
-        {{ .Content }}
+    <div class="panel mb-4">
+        <header class="my-4">
+            <h1 class="text-4xl uppercase font-semibold">{{ .Title }}</h1>
+            {{ partial "post-datetime" . }}
+        </header>
+    
+        {{ partial "post-cover" . }}
+    
+        <div class="prose prose-stone prose-xl dark:prose-invert prose-p:leading-relaxed">
+            {{ .Content }}
+        </div>
     </div>
 
-    <footer>
-        {{- partial "tags" . -}}
-    </footer>
+    <div class="panel mb-4">
+        <footer>
+            {{- partial "tags" . -}}
+        </footer>
+    </div>
+
+    <div class="panel mb-4 flex items-stretch gap-4">
+        <div class="flex-1">
+            {{ with .Prev }}
+                {{ partial "post-item" . }}
+            {{ end }}
+        </div>
+        <div class="flex-1">
+            {{ with .Next }}
+                {{ partial "post-item" . }}
+            {{ end }}
+        </div>
+    </div>
+
 </article>

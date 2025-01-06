@@ -1,0 +1,23 @@
+{{ if .Params.cover.image }}
+<figure class="mb-4">
+    <a href="{{ .RelPermalink }}">
+        <div class="img-wrapper rounded-sm overflow-hidden">
+            {{ $img := .Resources.GetMatch .Params.cover.image }}
+            {{ if $img }}
+                <img 
+                    class="block text-slate-500 bg-slate-300 w-full rounded-md"
+                    src="{{ $img.RelPermalink }}" 
+                    alt="{{ with .Params.cover.alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}" />
+            {{ else }}
+                <img 
+                    class="block text-slate-500 bg-slate-300 w-full rounded-md"
+                    src="https://fakeimg.pl/640x480/" alt="fakeimg.pl" />
+            {{ end }}
+            
+        </div>
+    </a>
+    {{ with .Params.cover.caption }}
+        <figcaption class="text-sm text-slate-500 text-center py-2">{{ . }}</figcaption>
+    {{ end }}
+</figure>
+{{ end }}

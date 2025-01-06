@@ -1,0 +1,18 @@
+
+
+{{ define "main" }}
+    <div class="main-content">
+        
+        {{ $pages := where site.RegularPages "Type" "post" }}
+        {{ $paginator := .Paginate $pages.ByDate 5 }}
+        
+        {{ range $paginator.Pages.Reverse }}
+            {{ partial "post-item.html" . }}
+        {{ end }}
+    </div>
+
+{{ end }}
+
+{{ define "side" }}
+    <h2>SIDE</h2>
+{{ end }}

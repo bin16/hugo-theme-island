@@ -5,20 +5,14 @@
         <a class="text-neutral-950" href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h3>
 
-    {{ partial "post-cover" . }}
+    <div class="text-slate-500">
 
-    <div class="text-neutral-500">
-
-        <div class="mb-4 prose">
+        <div class="mb-4">
             {{ with .Params.description }}
                 {{ . }}
             {{ else }}
                 {{ .Summary }}
             {{ end }}
-        </div>
-
-        <div class="flex items-center justify-start">
-            {{- partial "tags" . -}}
         </div>
 
     </div>

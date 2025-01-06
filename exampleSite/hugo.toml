@@ -2,7 +2,9 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "hugo-theme-pixel"
-themesdir = "../.."
+# themesdir = "../.."
+
+summaryLength = 30
 
 [Taxonomies]
 tag = "tags"
