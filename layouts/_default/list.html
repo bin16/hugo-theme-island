@@ -1,14 +1,12 @@
 {{ define "main" }}
     <h1 class="title">{{ .Title }}</h1>
 
+    {{ range .Paginator.Pages }}
+        {{ partial "post-item-thin.html" . }}
+    {{ end }}
 
-    <div class="main-content">
-        {{ range .Pages }}
+    {{ partial "pagination.html" .Paginator }}
 
-            {{ partial "post-item.html" . }}
-
-        {{ end }}
-    </div>
 {{ end }}
 
 {{ define "side" }}

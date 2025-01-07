@@ -2,9 +2,17 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "hugo-theme-pixel"
-# themesdir = "../.."
+themesdir = "../.."
 
 summaryLength = 30
+
+# [params]
+# DateFormat = "2006-01-02"
+
+[pagination]
+disableAliases = false
+pagerSize = 5
+path = 'page'
 
 [Taxonomies]
 tag = "tags"

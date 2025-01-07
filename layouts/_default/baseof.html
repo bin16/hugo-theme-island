@@ -13,26 +13,35 @@
 
     <nav class="panel mb-4">
         <div class="container mx-auto">
+            <div class="w-1/2 px-4 mx-auto flex">
 
-            <div class="flex">
-
-                <h3>{{ .Title }}</h3>
+                <h3>
+                    <a href="/">
+                        {{ site.Title }}
+                    </a>
+                </h3>
 
             </div>
-
         </div>
     </nav>
 
-    <div class="md:container mx-auto flex">
-        <div class="w-1/4">
-        </div>
-        <main class="w-1/2">
-            {{- block "main" . }}{{ end }}
-        </main>
-        <div class="w-1/4">
-            {{- block "side" . }}{{ end }}
+    <div class="md:container mx-auto p-2 lg:p-0">
+        <div class="grid grid-cols-1 lg:grid-cols-main gap-4">
+            <aside></aside>
+            <main>
+                {{- block "main" . }}{{ end }}
+            </main>
+            <aside>
+                {{- block "side" . }}{{ end }}
+            </aside>
         </div>
     </div>
+
+    <footer>
+        <div class="container mx-auto text-center text-slate-500 py-4">
+            HELLO WORLD
+        </div>
+    </footer>
 
 </body>
 </html>

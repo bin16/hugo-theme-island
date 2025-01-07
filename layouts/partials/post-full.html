@@ -1,10 +1,12 @@
-<article class="p-8 mb-8">
+<article class="">
 
     <div class="panel mb-4">
-        <header class="my-4">
-            <h1 class="text-4xl uppercase font-semibold">{{ .Title }}</h1>
+        <header class="mb-4">
             {{ partial "post-datetime" . }}
+            <h1 class="headline my-4">{{ .Title }}</h1>
         </header>
+
+        <div class="summary my-4">{{ .Summary }}</div>
     
         {{ partial "post-cover" . }}
     
@@ -20,14 +22,14 @@
     </div>
 
     <div class="panel mb-4 flex items-stretch gap-4">
-        <div class="flex-1">
+        <div class="flex-1 flex justify-start">
             {{ with .Prev }}
-                {{ partial "post-item" . }}
+                {{ .Title }}
             {{ end }}
         </div>
-        <div class="flex-1">
+        <div class="flex-1 flex justify-end">
             {{ with .Next }}
-                {{ partial "post-item" . }}
+                {{ .Title }}
             {{ end }}
         </div>
     </div>

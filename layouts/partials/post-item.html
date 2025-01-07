@@ -1,13 +1,13 @@
 <article class="panel mb-4">
-                
-    {{ partial "post-datetime" . }}
-    <h3 class="text-4xl font-semibold uppercase mb-4">
-        <a class="text-neutral-950" href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h3>
+    <header>
+        <h2 class="headline mb-4">
+            <a class="text-slate-950" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+    </header>
 
     {{ partial "post-cover" . }}
 
-    <div class="text-neutral-500">
+    <div class="summary">
 
         <div class="mb-4 prose">
             {{ with .Params.description }}
@@ -17,10 +17,9 @@
             {{ end }}
         </div>
 
-        <div class="flex items-center justify-start">
-            {{- partial "tags" . -}}
-        </div>
-
     </div>
 
+    <footer class="">
+        {{- partial "post-meta.html" . }}
+    </footer>
 </article>

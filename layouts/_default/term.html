@@ -1,13 +1,27 @@
 {{ define "main" }}
-    <h1 class="title">#{{ .Title }}</h1>
-
+    <div class="panel mb-4">
+        <div class="flex">
+            <a href="/">HOME</a>
+            <span>&nbsp;/&nbsp;</span>
+            <a href="/tags">Tags</a>
+            <span>&nbsp;/&nbsp;</span>
+            <h1>{{ .Title }}</h1>
+        </div>
+        {{ with .Summary }}
+            <div class="summary mt-4">{{ . }}</div>
+        {{ end }}
+    </div>
 
     <div class="main-content">
-        {{ range .Pages }}
+        <ul>
+            {{ range .Paginator.Pages }}
+                <li class="panel mb-4">
+                    {{ partial "post-item-mini" . }}
+                </li>
+            {{ end }}
+        </ul>
 
-            {{ partial "post-item-thin" . }}
-
-        {{ end }}
+        {{ partial "pagination.html" .Paginator }}
     </div>
 {{ end }}
 

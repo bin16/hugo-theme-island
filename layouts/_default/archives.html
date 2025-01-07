@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+    {{ $pages := where site.RegularPages "Type" "post" }}
+    {{ $paginator := .Paginate ($pages.GroupByDate "2006") 3 }}
+
+    {{ range $paginator.PageGroups }}
+        <h2 class="headline-2 my-4">{{ .Key }}</h2>
+
+        <ul>
+            {{ range .Pages }}
+                <li class="panel mb-4">
+                    {{ partial "post-item-mini.html" . }}
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+
+    {{ with $paginator.Next }}
+        <p>{{ . }}</p>
+    {{ end }}
+
+    {{ partial "pagination.html" $paginator }}
+
+{{ end }}
+
+{{ define "side" }}
+    <h2>SIDE</h2>
+{{ end }}

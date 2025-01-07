@@ -4,11 +4,13 @@
     <div class="main-content">
         
         {{ $pages := where site.RegularPages "Type" "post" }}
-        {{ $paginator := .Paginate $pages.ByDate 5 }}
+        {{ $paginator := .Paginate $pages.ByDate.Reverse 5 }}
         
-        {{ range $paginator.Pages.Reverse }}
+        {{ range $paginator.Pages }}
             {{ partial "post-item.html" . }}
         {{ end }}
+
+        {{ partial "pagination.html" $paginator }}
     </div>
 
 {{ end }}

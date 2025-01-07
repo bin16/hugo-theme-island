@@ -1,7 +1,13 @@
 {{ define "main" }}
-    <h1 class="title mb-4">{{ .Title }}</h1>
-    <div class="porse mb-4">
-        {{ .Content }}
+    <div class="panel mb-4">
+        <h1 class="headline mb-4">{{ .Title }}</h1>
+        {{ with .Summary }}
+            <div class="summary">{{ . }}</div>
+        {{ else }}
+            <div class="porse">
+                {{ .Content }}
+            </div>
+        {{ end }}
     </div>
 
     <ul class="columns-1 lg:columns-2">
@@ -11,7 +17,7 @@
                 <a  
                     href="{{ .Page.RelPermalink }}"
                     class="flex justify-between items-center">
-                    <h2 class="title">
+                    <h2 class="headline-2">
                         <span class="text-slate-500">#</span>
                         <span href="{{ .Page.RelPermalink }}">
                             {{ .Page.LinkTitle }}

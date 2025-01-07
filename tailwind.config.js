@@ -4,7 +4,11 @@ module.exports = {
     "layouts/**/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        "main": "1fr 2fr 1fr",
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
