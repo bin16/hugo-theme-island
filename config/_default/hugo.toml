@@ -1,0 +1,9 @@
+defaultContentLanguage = "en"
+
+[pagination]
+    disableAliases = false
+    pagerSize = 5
+    path = 'page'
+
+[Taxonomies]
+    tag = "tags"

@@ -1,0 +1,23 @@
+[menu.home]
+other = "Home"
+
+[menu.archives]
+other = "Archives"
+
+[menu.tags]
+other = "Tags"
+
+[menu.categories]
+other = "Categories"
+
+[menu.about]
+other = "About"
+
+[page.info]
+other = "Page {{ .pageNum }} of {{ .pageCount }}"
+
+[page.prev]
+other = "Previous"
+
+[page.next]
+other = "Next"
