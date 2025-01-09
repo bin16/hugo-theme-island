@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center">
+    <figure class="island mx-auto w-auto not-prose">
+        <img 
+            class="island-img"
+            src="{{ .Destination | safeURL }}"
+          {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+          {{- with .Title }} title="{{ . }}"{{ end -}}
+        >
+    
+        {{- with .Title }}
+            <figcaption class="island-body text-sm text-muted">
+                {{ . }}
+            </figcaption>
+        {{ end -}}
+    </figure>
+</div>

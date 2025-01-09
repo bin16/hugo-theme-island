@@ -4,8 +4,10 @@ draft: false
 title: 'Blockquote and Alerts'
 tags:
     - demo
-    - typo/blockquote
-    - typo/alert
+    - markup/blockquote
+    - markup/alert
+cover:
+    image: pattern.png
 ---
 
 ## Blockquote

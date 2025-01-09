@@ -4,10 +4,43 @@ title = 'My New Hugo Site'
 theme = "hugo-theme-pixel"
 themesdir = "../.."
 
-summaryLength = 30
+summaryLength = 128
 
 # [params]
 # DateFormat = "2006-01-02"
+
+[menus]
+  [[menus.main]]
+    identifier = "menu.home"
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    identifier = "menu.tags"
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 20
+  [[menus.main]]
+    identifier = "menu.archives"
+    name = 'Archives'
+    pageRef = '/archives'
+    weight = 30
+
+[languages]
+  [languages.en]
+    disabled = false
+    languageCode = 'en'
+    # languageDirection = ''
+    languageName = 'English'
+    weight = 0
+    title = 'ExampleSite'
+  [languages.zh]
+    disabled = false
+    languageCode = 'zh-Hans'
+    # languageDirection = ''
+    languageName = '中文'
+    title = '示例网站'
+    weight = 10
 
 [pagination]
 disableAliases = false
@@ -16,3 +49,7 @@ path = 'page'
 
 [Taxonomies]
 tag = "tags"
+
+[params]
+logo = "fake-logo.png"
+mainSections = ["post", "doc"]

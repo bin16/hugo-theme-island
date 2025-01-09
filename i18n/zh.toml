@@ -21,3 +21,6 @@ other = "Prev"
 
 [page.next]
 other = "Next"
+
+[article.toc]
+other = "目录"

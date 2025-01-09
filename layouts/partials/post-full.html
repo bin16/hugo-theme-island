@@ -1,14 +1,14 @@
 <article class="">
 
     <div class="island mb-6">
+        {{- partial "post-figure.html" . }}
+
         <header class="island-header">
             <h1 class="text-2xl">{{ .Title }}</h1>
         </header>
-
-        {{- partial "post-figure.html" . }}
     
         <div class="island-body">
-            <div class="prose prose-gray dark:prose-invert max-w-none prose-xl prose-p:leading-relaxed">
+            <div class="prose prose-gray dark:prose-invert prose-xl prose-p:leading-relaxed">
                 {{ .Content }}
             </div>
         </div>
