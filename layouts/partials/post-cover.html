@@ -1,7 +1,7 @@
 {{ if .Params.cover.image }}
 <figure class="mb-4">
     <a href="{{ .RelPermalink }}">
-        <div class="img-wrapper rounded-sm overflow-hidden">
+        <div class="img-wrapper rounded-xs overflow-hidden">
             {{ $img := .Resources.GetMatch .Params.cover.image }}
             {{ if $img }}
                 <img 

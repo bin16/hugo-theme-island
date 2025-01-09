@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@source "layouts/";
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --grid-template-columns-main: 1fr 2fr 1fr;
+}
 
 .no-image {
     @apply bg-slate-400 rounded-md;
@@ -14,16 +19,6 @@
     /* @apply border border-slate-400; */
     @apply shadow-xl shadow-slate-200;
 }
-
-/* .tag {
-    @apply inline-block;
-    @apply border rounded-md border-slate-600;
-    @apply text-slate-600;
-    @apply px-2;
-    @apply me-2;
-    @apply transition-colors ease-out;
-    @apply hover:border-green-500 hover:text-green-500;
-} */
 
 .panel {
     @apply p-4;
@@ -50,7 +45,7 @@
     @apply px-1 me-2;
     @apply border border-slate-300;
     @apply text-slate-500 uppercase;
-    @apply rounded-sm;
+    @apply rounded-xs;
 }
 
 .headline {
@@ -73,7 +68,7 @@
 .page-item {
     @apply inline-block;
     @apply p-2;
-    @apply rounded-sm;
+    @apply rounded-xs;
     @apply border border-slate-300;
     @apply bg-slate-100;
     @apply text-slate-500;
@@ -95,5 +90,5 @@
     @apply px-2;
     @apply bg-slate-200;
     @apply text-slate-500;
-    @apply border border-slate-300 rounded-sm;
+    @apply border border-slate-300 rounded-xs;
 }

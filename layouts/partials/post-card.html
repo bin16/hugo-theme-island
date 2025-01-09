@@ -1,8 +1,8 @@
-<article class="mb-8 flex items-stretch bg-slate-50 rounded-md shadow-sm shadow-slate-200 hover:shadow-xl transition-shadow ease-in-out">
+<article class="mb-8 flex items-stretch bg-slate-50 rounded-md shadow-xs shadow-slate-200 hover:shadow-xl transition-shadow ease-in-out">
 
     {{ if .Params.cover.image }}
         <figure class="w-1/2">
-            <a href="{{ .RelPermalink }}" class="block min-h-48 rounded-sm overflow-hidden">
+            <a href="{{ .RelPermalink }}" class="block min-h-48 rounded-xs overflow-hidden">
                 {{ $img := .Resources.GetMatch .Params.cover.image }}
                 {{ if $img }}
                     <img 
