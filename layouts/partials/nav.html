@@ -1,0 +1,31 @@
+<nav class="island mb-4 md:mb-6 py-4 sticky top-0">
+    <div class="container mx-auto grid grid-cols-main gap-4">
+        <span></span>
+        <div class="flex flex-col gap-4 md:flex-row items-center justify-between">
+            
+            <h1>
+                <a href="/">
+                    {{ $logo := resources.GetMatch site.Params.logo }}
+                    {{ if $logo }}
+                        <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}" class="site-icon inline-block max-h-8 me-2">
+                        <span class="site-title">{{ site.Title }}</span>
+                    {{ else }}
+                        <span class="site-title">{{ site.Title }}</span>
+                    {{ end }}
+                </a>
+            </h1>
+
+            <ul class="nav-menu flex gap-4 p-0 uppercase" id="nav-content">
+                {{ range site.Menus.main }}
+                    <li>
+                        <a href="{{ .URL }}" class="nav-menu-item">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+                <li>
+                    <a href="#" class="nav-menu-item">ENGLISH</a>
+                </li>
+            </ul>
+        </div>
+        <span></span>
+    </div>
+</nav>

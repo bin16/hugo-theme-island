@@ -1,6 +1,6 @@
 {{ define "main" }}
-    <div class="panel mb-4">
-        <div class="flex">
+    <div class="island mb-6">
+        <div class="island-header">
             <a href="/">HOME</a>
             <span>&nbsp;/&nbsp;</span>
             <a href="/tags">Tags</a>
@@ -8,15 +8,15 @@
             <h1>{{ .Title }}</h1>
         </div>
         {{ with .Summary }}
-            <div class="summary mt-4">{{ . }}</div>
+            <div class="island-body">{{ . }}</div>
         {{ end }}
     </div>
 
     <div class="main-content">
         <ul>
             {{ range .Paginator.Pages }}
-                <li class="panel mb-4">
-                    {{ partial "post-item-mini" . }}
+                <li>
+                    {{ partial "post-card.html" . }}
                 </li>
             {{ end }}
         </ul>

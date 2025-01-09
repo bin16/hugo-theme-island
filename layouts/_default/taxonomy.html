@@ -1,29 +1,27 @@
 {{ define "main" }}
-    <div class="panel mb-4">
-        <h1 class="headline mb-4">{{ .Title }}</h1>
-        {{ with .Summary }}
-            <div class="summary">{{ . }}</div>
-        {{ else }}
-            <div class="porse">
-                {{ .Content }}
-            </div>
-        {{ end }}
+    <div class="island u-block mb-6">
+        <div class="island-body flex flex-col gap-2">
+            <h1 class="text-2xl">{{ .Title }}</h1>
+            {{- partial "post-summary.html" . }}
+        </div>
     </div>
 
-    <ul class="columns-1 lg:columns-2">
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
         {{ range .Data.Terms.ByCount }}
-            <li class="panel mb-4 hover:bg-slate-200 transition-colors">
+            <li class="w-full h-full">
                 <a  
                     href="{{ .Page.RelPermalink }}"
-                    class="flex justify-between items-center">
-                    <h2 class="headline-2">
-                        <span class="text-slate-500">#</span>
-                        <span href="{{ .Page.RelPermalink }}">
-                            {{ .Page.LinkTitle }}
-                        </span>
-                    </h2>
-                    <span class="text-slate-400">({{ .Count }})</span>
+                    class="block w-full h-full island transition-colors">
+                    <div class="island-body w-full h-full flex items-center justify-between">
+                        <h2 class="text-xl">
+                            <span class="text-muted">#</span>
+                            <span href="{{ .Page.RelPermalink }}">
+                                {{ .Page.LinkTitle }}
+                            </span>
+                        </h2>
+                        <span class="text-muted">({{ .Count }})</span>
+                    </div>
                 </a>
             </li>
         {{ end }}

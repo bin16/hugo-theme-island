@@ -1,0 +1,9 @@
+{{ if .Description }}
+    <p class="summary">
+        {{ .Description }}
+    </p>
+{{ else if .Summary }}
+    <div class="summary">
+        {{ .Summary | plainify | strings.Truncate 128 }}
+    </div>
+{{ end }}

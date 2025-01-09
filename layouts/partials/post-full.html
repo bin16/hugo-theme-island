@@ -1,33 +1,31 @@
 <article class="">
 
-    <div class="panel mb-4">
-        <header class="mb-4">
-            {{ partial "post-datetime" . }}
-            <h1 class="headline my-4">{{ .Title }}</h1>
+    <div class="island mb-6">
+        <header class="island-header">
+            <h1 class="text-2xl">{{ .Title }}</h1>
         </header>
 
-        <div class="summary my-4">{{ .Summary }}</div>
+        {{- partial "post-figure.html" . }}
     
-        {{ partial "post-cover" . }}
-    
-        <div class="prose prose-stone prose-xl dark:prose-invert prose-p:leading-relaxed">
-            {{ .Content }}
+        <div class="island-body">
+            <div class="prose prose-gray dark:prose-invert max-w-none prose-xl prose-p:leading-relaxed">
+                {{ .Content }}
+            </div>
         </div>
-    </div>
 
-    <div class="panel mb-4">
-        <footer>
-            {{- partial "tags" . -}}
+        <footer class="island-footer flex flex-wrap gap-2 justify-between">
+            {{- partial "post-date.html" . }}
+            {{- partial "post-tags.html" . }}
         </footer>
     </div>
 
-    <div class="panel mb-4 flex items-stretch gap-4">
-        <div class="flex-1 flex justify-start">
+    <div class="island mb-4 flex items-stretch">
+        <div class="island-body flex-1 flex justify-start border-r-1">
             {{ with .Prev }}
                 {{ .Title }}
             {{ end }}
         </div>
-        <div class="flex-1 flex justify-end">
+        <div class="island-body flex-1 flex justify-end">
             {{ with .Next }}
                 {{ .Title }}
             {{ end }}

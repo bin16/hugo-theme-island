@@ -1,0 +1,6 @@
+{{ if .Params.cover.image }}
+    {{ $img := .Resources.GetMatch .Params.cover.image }}
+    {{ if $img }}
+        <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="island-img">
+    {{ end }}
+{{ end }}

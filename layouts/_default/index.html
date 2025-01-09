@@ -1,20 +1,14 @@
-
-
 {{ define "main" }}
-    <div class="main-content">
+    <main>
         
-        {{ $pages := where site.RegularPages "Type" "post" }}
+        {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
         {{ $paginator := .Paginate $pages.ByDate.Reverse 5 }}
         
         {{ range $paginator.Pages }}
-            {{ partial "post-item.html" . }}
+            {{ partial "post-card.html" . }}
         {{ end }}
 
         {{ partial "pagination.html" $paginator }}
-    </div>
 
-{{ end }}
-
-{{ define "side" }}
-    <h2>SIDE</h2>
+    </main>
 {{ end }}

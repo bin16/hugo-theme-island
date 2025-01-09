@@ -1,0 +1,56 @@
+<aside class="fixed left-4 bottom-4 flex flex-col gap-2">
+    <a 
+        href="#top"
+        class="button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </a>
+    <button 
+        data-open="#screen-nav"
+        class="button md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </button>
+</aside>
+<nav id="screen-nav" class="hidden screen-nav fixed top-0 left-0 bottom-0 right-0 bg-slate-100">
+    <div class="absolute left-4 bottom-4">
+        <button 
+            data-close="#screen-nav"
+            class="button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+    <ul class="w-1/2 mx-auto h-full p-4 flex flex-col items-stretch justify-center gap-4">
+        {{ range site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}" class="block button uppercase">{{ .Name }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>
+<script>
+(function() {
+    document.querySelectorAll("[data-open]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const sel = btn.getAttribute("data-open");
+            document.querySelectorAll(sel).forEach(nav => {
+                nav.classList.remove("hidden");
+            });
+        })
+    });
+
+    document.querySelectorAll("[data-close]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const sel = btn.getAttribute("data-close");
+            document.querySelectorAll(sel).forEach(nav => {
+                nav.classList.add("hidden");
+            });
+        });
+    });
+})();
+</script>

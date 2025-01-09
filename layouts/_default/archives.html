@@ -1,28 +1,37 @@
 {{ define "main" }}
 
+    <div class="island mb-6">
+        <div class="island-body flex flex-col gap-2">
+            <h1 class="text-2xl">{{ .Title }}</h1>
+            {{- partial "post-summary.html" . }}
+        </div>
+    </div>
+
     {{ $pages := where site.RegularPages "Type" "post" }}
     {{ $paginator := .Paginate ($pages.GroupByDate "2006") 3 }}
 
-    {{ range $paginator.PageGroups }}
-        <h2 class="headline-2 my-4">{{ .Key }}</h2>
+    <div class="island u-block">
+        <div class="island-body">
+            {{ range $paginator.PageGroups }}
+                <h2 class="text-2xl mb-4">{{ .Key }}</h2>
+        
+                <ul class="flex flex-col border-t border-x border-muted">
+                    {{ range .Pages }}
+                        <li class="border-b border-muted p-2 flex flex-wrap">
+                            <h3 class="text-xl uppercase flex-1">
+                                <a class="block w-full" href="{{ .RelPermalink }}">
+                                    {{ .LinkTitle }}
+                                </a>
+                            </h3>
 
-        <ul>
-            {{ range .Pages }}
-                <li class="panel mb-4">
-                    {{ partial "post-item-mini.html" . }}
-                </li>
+                            {{ partial "post-date.html" . }}
+                        </li>
+                    {{ end }}
+                </ul>
             {{ end }}
-        </ul>
-    {{ end }}
-
-    {{ with $paginator.Next }}
-        <p>{{ . }}</p>
-    {{ end }}
+        </div>
+    </div>
 
     {{ partial "pagination.html" $paginator }}
 
-{{ end }}
-
-{{ define "side" }}
-    <h2>SIDE</h2>
 {{ end }}

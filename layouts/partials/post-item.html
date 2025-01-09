@@ -1,14 +1,15 @@
-<article class="panel mb-4">
-    <header>
-        <h2 class="headline mb-4">
-            <a class="text-slate-950" href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-    </header>
-
+<article class="card mb-4">
     {{ partial "post-cover" . }}
 
-    <div class="summary">
+    <div class="card-body">
+        <header>
+            <h2 class="card-title mb-4">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+        </header>
+    </div>
 
+    <div class="summary">
         <div class="mb-4 prose">
             {{ with .Params.description }}
                 {{ . }}
@@ -16,7 +17,6 @@
                 {{ .Summary }}
             {{ end }}
         </div>
-
     </div>
 
     <footer class="">

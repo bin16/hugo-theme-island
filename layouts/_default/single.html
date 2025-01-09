@@ -1,3 +1,14 @@
 {{ define "main" }}
     {{ partial "post-full" . }}
 {{ end }}
+
+{{ define "side" }}
+    <div class="island">
+        <header class="island-header">
+            目录
+        </header>
+        <div class="island-body prose">
+            {{ .TableOfContents }}
+        </div>
+    </div>
+{{ end }}
