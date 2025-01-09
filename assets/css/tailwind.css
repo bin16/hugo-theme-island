@@ -9,7 +9,8 @@
 }
 
 .pagination,
-.island {
+.island,
+.button {
     @apply rounded-sm;
     @apply border-t border-x-1 border-b-6;
 }
@@ -18,7 +19,6 @@
     @apply p-4;
     @apply border-b;
 }
-
 .island-img,
 .island-image {
     @apply border-b;
@@ -26,25 +26,48 @@
 .island-body {
     @apply p-4;
 }
-
 .island-foot,
 .island-footer {
     @apply p-4;
     @apply border-t;
 }
 
+.button {
+    @apply p-4;
+}
+
+.page-info {
+    @apply rounded-none;
+}
 .page-item-prev {
-    @apply border-e;
+    @apply border-e-0 rounded-e-none;
 }
 .page-item-next {
-    @apply border-s;
+    @apply border-s-0 rounded-s-none;
 }
+
+.disabled {
+    @apply pointer-events-none;
+    @apply cursor-not-allowed;
+    @apply opacity-50;
+}
+
+/* .button-group .button {
+    @apply border-e-0 rounded-e-none;
+    @apply last:border-e rounded-e-sm;
+} */
 
 /******************** DARK ********************/
 
-.island {
+.island,
+.button {
     @apply bg-gray-100;
     @apply dark:bg-slate-700;
+}
+.button:not(.disabled) {
+    @apply transition-colors;
+    @apply hover:bg-gray-200;
+    @apply dark:hover:bg-slate-600;
 }
 .island,
 .island-head,
@@ -54,6 +77,7 @@
 .island-footer,
 .island-img,
 .island-image,
+.button,
 .page-item-prev,
 .page-item-next {
     @apply border-gray-400;

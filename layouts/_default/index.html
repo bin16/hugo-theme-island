@@ -2,7 +2,7 @@
     <main>
         
         {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-        {{ $paginator := .Paginate $pages.ByDate.Reverse 5 }}
+        {{ $paginator := .Paginate $pages.ByDate.Reverse }}
         
         {{ range $paginator.Pages }}
             {{ partial "post-card.html" . }}

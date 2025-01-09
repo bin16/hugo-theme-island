@@ -18,7 +18,13 @@
             <ul class="nav-menu flex gap-4 p-0 uppercase" id="nav-content">
                 {{ range site.Menus.main }}
                     <li>
-                        <a href="{{ .URL }}" class="nav-menu-item">{{ .Name }}</a>
+                        <a href="{{ .URL }}" class="nav-menu-item">
+                            {{ with .Identifier }}
+                                <span>{{ . | i18n }}</span>
+                            {{ else }}
+                                <span>{{ .Name }}</span>
+                            {{ end }}
+                        </a>
                     </li>
                 {{ end }}
                 <li>
