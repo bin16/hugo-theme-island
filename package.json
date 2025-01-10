@@ -2,8 +2,9 @@
   "name": "hugo-theme-island",
   "version": "0.0.1",
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
-    "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css"
+    "watch-css": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
+    "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css",
+    "dev": "hugo server -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D"
   },
   "keywords": [],
   "author": "",

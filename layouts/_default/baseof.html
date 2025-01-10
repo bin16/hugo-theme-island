@@ -6,8 +6,13 @@
     
     {{ partial "head-meta.html" . }}
 
-    {{- $css := resources.Get "css/tailwind.css" | css.TailwindCSS }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ if eq hugo.Environment "theme-dev" }}
+        {{- $css := resources.Get "css/tailwind.css" | css.TailwindCSS }}
+        <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ else }}
+        {{- $css := resources.Get "css/main.css" }}
+        <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ end }}
 
 </head>
 <body>

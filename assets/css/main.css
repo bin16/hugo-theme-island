@@ -378,7 +378,6 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --grid-template-columns-main: 1fr 2fr 1fr;
   }
 }
 @layer base {
@@ -1546,7 +1545,7 @@
     }
   }
 }
-.highlight {
+.island > .highlight, .island > pre {
   padding: calc(var(--spacing) * 4);
   background-color: var(--color-amber-50);
   @media (prefers-color-scheme: dark) {
@@ -1555,6 +1554,7 @@
   font-family: var(--font-mono);
   font-size: var(--text-base);
   line-height: var(--tw-leading, var(--text-base--line-height));
+  text-wrap: wrap;
 }
 .highlight .line {
   text-wrap: wrap;

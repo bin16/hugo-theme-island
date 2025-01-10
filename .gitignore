@@ -2,3 +2,6 @@ node_modules/
 exampleSite/public/
 exampleSite/resources/
 exampleSite/ebug/
+public/
+resources/
+.hugo_build.lock

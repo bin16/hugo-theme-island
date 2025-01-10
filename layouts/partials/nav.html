@@ -18,16 +18,12 @@
                 {{ range site.Menus.main }}
                     <li>
                         <a href="{{ .URL | relLangURL }}" class="nav-menu-item">
-                            {{ with .Identifier }}
-                                <span>{{ . | i18n }}</span>
-                            {{ else }}
-                                <span>{{ .Name }}</span>
-                            {{ end }}
+                            <span>{{ .Name }}</span>
                         </a>
                     </li>
                 {{ end }}
-
             </ul>
+
         </div>
     </div>
 </nav>
