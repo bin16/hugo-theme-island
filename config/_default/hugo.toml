@@ -1,5 +1,7 @@
 defaultContentLanguage = "en"
 
+summaryLength = 75
+
 [pagination]
     disableAliases = false
     pagerSize = 5
@@ -7,3 +9,14 @@ defaultContentLanguage = "en"
 
 [Taxonomies]
     tag = "tags"
+    category = "categories"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.parser]
+            wrapStandAloneImageWithinParagraph = false
+            [markup.goldmark.parser.attribute]
+                block = true
+    [markup.highlight]
+        style = "github"
+        noClasses = false
