@@ -1,12 +1,14 @@
 
-.highlight {
+.island > .highlight,
+.island > pre {
     @apply p-4;
     @apply bg-amber-50;
     @apply dark:bg-slate-800;
     @apply text-base font-mono;
+    @apply text-wrap;
 }
 .highlight .line {
-    text-wrap: wrap;
+    @apply text-wrap;
 }
 .chroma .err {
     @apply text-red-800 bg-red-200;
