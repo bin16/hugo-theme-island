@@ -3,15 +3,7 @@
 @source "layouts/partials/";
 
 @plugin '@tailwindcss/typography';
-@import "code.css";
-
-@theme {
-  --grid-template-columns-main: 1fr 2fr 1fr;
-}
-/* 
-html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
+@import "./code.css";
 
 .true-grid {
     @apply max-w-6xl mx-auto grid grid-cols-12 gap-4;

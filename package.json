@@ -1,11 +1,9 @@
 {
-  "name": "hugo-theme-pixel",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "hugo-theme-island",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -c ./tailwind.config.js -i assets/css/tailwind.css -o assets/css/main.css -w",
-    "build-css": "npx tailwindcss -c ./tailwind.config.js -i assets/css/tailwind.css -o assets/css/main.css"
+    "dev": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
+    "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +12,6 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0-beta.8",
     "@tailwindcss/typography": "^0.5.15",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
     "tailwindcss": "^4.0.0-beta.8"
   }
 }
