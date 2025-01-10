@@ -8,9 +8,22 @@
 @theme {
   --grid-template-columns-main: 1fr 2fr 1fr;
 }
-
+/* 
 html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+.true-grid {
+    @apply max-w-6xl mx-auto grid grid-cols-12 gap-4;
+}
+.true-grid-main {
+    @apply col-start-4 col-span-6;
+}
+.true-grid-left {
+    @apply col-start-1 col-span-3;
+}
+.true-grid-right {
+    @apply col-start-10 col-span-3;
 }
 
 .pagination,

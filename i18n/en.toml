@@ -27,3 +27,6 @@ other = "Next"
 
 [article.toc]
 other = "Table of Contents"
+
+[article.translations]
+other = "Translations"

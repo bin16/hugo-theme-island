@@ -22,6 +22,16 @@ summaryLength = 128
     name = 'Archives'
     pageRef = '/archives'
     weight = 30
+  [[menus.main]]
+    identifier = "menu.authors"
+    name = 'Authors'
+    pageRef = '/authors'
+    weight = 40
+  [[menus.main]]
+    identifier = "menu.about"
+    name = 'About'
+    pageRef = '/about'
+    weight = 50
 
 [languages]
   [languages.en]
@@ -31,6 +41,8 @@ summaryLength = 128
     languageName = 'English'
     weight = 0
     title = 'ExampleSite'
+    [languages.en.params]
+      DateFormat = "Oct 15, 2006" 
   [languages.zh]
     disabled = false
     languageCode = 'zh-Hans'
@@ -38,6 +50,8 @@ summaryLength = 128
     languageName = '中文'
     title = '示例网站'
     weight = 10
+    [languages.zh.params]
+      DateFormat = "2006-01-02" 
 
 [pagination]
 disableAliases = false

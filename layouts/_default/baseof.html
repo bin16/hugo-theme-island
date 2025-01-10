@@ -13,22 +13,25 @@
 <body>
     {{- partial "nav.html" . }}
 
-    <div class="md:container mx-auto px-2 lg:p-0">
-        <div class="grid grid-cols-1 lg:grid-cols-main gap-4">
-            <aside></aside>
-            <main>
-                {{- block "main" . }}{{ end }}
-            </main>
-            <aside>
-                {{- block "side" . }}{{ end }}
-            </aside>
-        </div>
+    <div class="true-grid">
+        <main class="true-grid-main">
+            {{- block "main" . }}{{ end }}
+        </main>
+        <aside class="true-grid-right">
+            {{- block "side" . }}{{ end }}
+        </aside>
     </div>
 
     <footer class="border-t border-muted mt-8">
-        <div class="container mx-auto text-center text-slate-500 py-4">
-            &copy;&nbsp;{{ site.Title }}
+
+        <div class="true-grid">
+            <div class="col-span-full">
+                <p class="pt-4 pb-8 text-center">
+                    &copy;&nbsp;{{ site.Title }}
+                </p>
+            </div>
         </div>
+
     </footer>
 
 </body>

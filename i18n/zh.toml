@@ -27,3 +27,6 @@ other = "Next"
 
 [article.toc]
 other = "目录"
+
+[article.translations]
+other = "翻译"
