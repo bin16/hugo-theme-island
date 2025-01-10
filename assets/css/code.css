@@ -1,0 +1,105 @@
+
+.highlight {
+    @apply p-4;
+    @apply bg-amber-50;
+    @apply dark:bg-slate-800;
+    @apply text-base font-mono;
+}
+.highlight .line {
+    text-wrap: wrap;
+}
+.chroma .err {
+    @apply text-red-800 bg-red-200;
+    @apply dark:text-red-200 dark:bg-red-800;
+}
+
+/* Keyword */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr
+.chroma .kt {
+    @apply text-red-600;
+    @apply dark:text-red-400;
+}
+
+/* Name? */
+.chroma .n,
+.chroma .na,
+.chroma .nb,
+.chroma .nc,
+.chroma .nd,
+.chroma .ni,
+.chroma .nn,
+.chroma .no,
+.chroma .nv,
+.chroma .ni,
+.chroma .ne,
+.chroma .nf,
+.chroma .nl,
+.chroma .np,
+.chroma .nx,
+.chroma .gi {
+    @apply text-cyan-600;
+    @apply dark:text-cyan-400;
+}
+
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm {
+    @apply text-purple-500;
+}
+
+/* Strings */
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chrome .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+    @apply text-green-600;
+    @apply dark:text-green-400;
+}
+
+/* Numbers */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo,
+.chroma .se {
+    @apply text-lime-500;
+    @apply dark:text-lime-300;
+}
+
+/* Operator */
+.chroma .o,
+.chroma .ow,
+.chroma .gd {
+    @apply text-indigo-600;
+    @apply dark:text-indigo-400;
+}
+
+/* Comments */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cpf,
+.chroma .gu {
+    @apply text-amber-800;
+    @apply dark:text-amber-200;
+}

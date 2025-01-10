@@ -3,12 +3,14 @@
 {{ end }}
 
 {{ define "side" }}
-    <div class="island">
-        <header class="island-header">
-            {{ i18n "article.toc" }}
-        </header>
-        <div class="island-body prose dark:prose-invert prose-a:no-underline prose-a:hover:underline">
-            {{ .TableOfContents }}
+    {{ with .TableOfContents }}
+        <div class="island">
+            <header class="island-header">
+                {{ i18n "article.toc" }}
+            </header>
+            <div class="island-body prose dark:prose-invert prose-a:no-underline prose-a:hover:underline">
+                {{ . }}
+            </div>
         </div>
-    </div>
+    {{ end }}
 {{ end }}
