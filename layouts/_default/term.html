@@ -1,11 +1,7 @@
 {{ define "main" }}
     <div class="island mb-6">
         <div class="island-header">
-            <a href="/">HOME</a>
-            <span>&nbsp;/&nbsp;</span>
-            <a href="/tags">Tags</a>
-            <span>&nbsp;/&nbsp;</span>
-            <h1>{{ .Title }}</h1>
+            <h2>{{ .Title }}</h2>
         </div>
         {{ with .Summary }}
             <div class="island-body">{{ . }}</div>

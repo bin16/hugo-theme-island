@@ -1,0 +1,40 @@
+<!-- Title -->
+{{ if .IsHome }}
+    <title>{{ site.Title }}</title>
+    <meta name="og:title" content="{{ site.Title }}" />
+{{ else }}
+    <title>{{ .Title }} - {{ site.Title }}</title>
+    <meta name="og:title" content="{{ .Title }} - {{ site.Title }}" />
+{{ end }}
+
+<!-- Description -->
+{{- if .IsHome -}}
+    <meta name="description" content="{{ site.Params.Description }}" />
+    <meta property="og:description" content="{{ site.Params.Description }}" />
+{{- else if .Params.Description -}}
+    <meta name="description" content="{{ .Params.Description }}" />
+    <meta property="og:description" content="{{ .Params.Description }}" />
+{{ else }}
+    <meta name="description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />
+    <meta property="og:description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />
+{{- end }}
+
+<!-- URL -->
+<link rel="canonical" href="{{ .Permalink }}" />
+<!-- TODO: -->
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<!-- TODO: -->
+<!-- Pagination -->
+
+{{ if .IsHome }}
+    <meta property="og:type" content="website" />
+{{ end }}
+
+
+
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

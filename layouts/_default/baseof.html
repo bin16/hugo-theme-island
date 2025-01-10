@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
+    
+    {{ partial "head-meta.html" . }}
 
     {{- $css := resources.Get "css/tailwind.css" | css.TailwindCSS }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
