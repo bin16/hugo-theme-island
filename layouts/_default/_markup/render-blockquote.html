@@ -1,6 +1,6 @@
 {{ if eq .Type "alert" }}
-    <figure class="island not-prose my-4 alert-{{ .AlertType }}">
-        <div class="flex p-4 gap-4 items-center">
+    <figure class="island text-base not-prose mb-4 alert-{{ .AlertType }}">
+        <div class="flex p-2 gap-2 md:p-4 md:gap-4 items-center">
             <div class="">
                 {{ if eq .AlertType "note" }}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 md:size-10">
@@ -30,9 +30,9 @@
                 {{ end }}            
             </div>
 
-            <div class="flex-1">
+            <div class="flex-1 flex flex-col gap-2">
                 {{ with .AlertTitle }}
-                    <h4 class="alert-title uppercase font-semibold mb-2">{{ . }}</h4>
+                    <h4 class="alert-title uppercase font-semibold">{{ . }}</h4>
                 {{ end }}
                 <div>
                     {{ .Text }}
@@ -41,12 +41,12 @@
         </div>
     </figure>
 {{ else }}
-    <figure class="island">
-        <blockquote class="is-land-body" {{ with .Attributes.cite }}cite="{{ . }}"{{ end }}>
+    <figure class="island text-base mb-4 not-prose">
+        <blockquote class="island-body" {{ with .Attributes.cite }}cite="{{ . }}"{{ end }}>
             {{ .Text }}
         </blockquote>
         {{ with .Attributes.caption }}
-            <figcaption class="blockquote-caption island-footer">
+            <figcaption class="blockquote-caption island-footer text-sm text-muted">
                 {{ . | safeHTML }}
             </figcaption>
         {{ end }}

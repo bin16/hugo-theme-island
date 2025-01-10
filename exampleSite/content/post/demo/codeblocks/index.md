@@ -11,6 +11,8 @@ cover:
     image: pattern.png
 ---
 
+## Markdown Code Fence
+
 ```go
 // example
 package main
@@ -34,3 +36,43 @@ func main() {
 }
 ```
 ~~~
+
+### With Highlights
+
+```go {linenos=table,hl_lines=[1,"6-8"],linenostart=1}
+// example
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+```
+
+## Hugo ShortCodes
+
+{{< highlight go >}}
+// example
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+{{< / highlight >}}
+
+### With Highlights
+
+{{< highlight go "linenos=table,hl_lines=1 6-8,linenostart=1" >}}
+// example
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+{{< / highlight >}}
+

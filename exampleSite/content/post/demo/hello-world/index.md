@@ -6,6 +6,8 @@ cover:
     image: pattern.png
 tags:
     - demo
+categories:
+    - demo
 ---
 
 ## Cras consequat leo mauris
@@ -34,9 +36,55 @@ import (
     "fmt"
 )
 
+// Hello World!
 func main() {
-    fmt.Println("Hello World!")
+    /* comments */
+    var name = "World"
+    var count = 5
+
+    for i := 0; i < count*2; i++ {
+        fmt.Printf("Hello %s!" , name)
+    }
 }
+```
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func hello(w http.ResponseWriter, req *http.Request) {
+    fmt.Fprintf(w, "hello\n")
+}
+
+func headers(w http.ResponseWriter, req *http.Request) {
+    for name, headers := range req.Header {
+        for _, h := range headers {
+            fmt.Fprintf(w, "%v: %v\n", name, h)
+        }
+    }
+}
+
+func main() {
+    http.HandleFunc("/hello", hello)
+    http.HandleFunc("/headers", headers)
+
+    http.ListenAndServe(":8090", nil)
+}
+```
+
+```goat
+      .               .                .               .--- 1          .-- 1     / 1
+     / \              |                |           .---+            .-+         +
+    /   \         .---+---.         .--+--.        |   '--- 2      |   '-- 2   / \ 2
+   +     +        |       |        |       |    ---+            ---+          +
+  / \   / \     .-+-.   .-+-.     .+.     .+.      |   .--- 3      |   .-- 3   \ / 3
+ /   \ /   \    |   |   |   |    |   |   |   |     '---+            '-+         +
+ 1   2 3   4    1   2   3   4    1   2   3   4         '--- 4          '-- 4     \ 4
+
 ```
 
 ### Nullam eget libero et nulla

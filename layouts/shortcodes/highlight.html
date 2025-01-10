@@ -1,0 +1,7 @@
+<div class="island mx-auto w-auto mb-4 overflow-hidden not-prose">
+    {{ if len .Params | eq 2 }}
+        {{ highlight (trim .InnerDeindent "\n\r") (.Get 0) (.Get 1) }}
+    {{ else }}
+        {{ highlight (trim .InnerDeindent "\n\r") (.Get 0) "" }}
+    {{ end }}
+</div>
