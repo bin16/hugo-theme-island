@@ -3,7 +3,12 @@ date: '2025-01-08T15:13:06+08:00'
 draft: false
 title: 'Theme Configuration'
 cover:
-    image: hugo.png
+    image: img/hugo.png
+authors:
+    - alice
+    - bob
+categories:
+    - doc
 ---
 
 ## Configuration

@@ -6,9 +6,6 @@ themesdir = "../.."
 
 summaryLength = 128
 
-# [params]
-# DateFormat = "2006-01-02"
-
 [menus]
   [[menus.main]]
     identifier = "menu.home"
@@ -47,9 +44,26 @@ disableAliases = false
 pagerSize = 5
 path = 'page'
 
+[permalinks]
+authors = "/u/:slug/"
+
 [Taxonomies]
-tag = "tags"
+    tag = "tags"
+    category = "categories"
+    author = "authors"
 
 [params]
-logo = "fake-logo.png"
-mainSections = ["post", "doc"]
+  logo = "fake-logo.png"
+  mainSections = ["post", "doc"]
+  DateFormat = "01/02"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.parser]
+            wrapStandAloneImageWithinParagraph = false
+            [markup.goldmark.parser.attribute]
+                block = true
+    [markup.highlight]
+        style = "github"
+        noClasses = false
+        

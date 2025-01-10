@@ -5,6 +5,8 @@ title: 'Codeblocks'
 tags:
     - demo
     - markup/codeblock
+authors:
+    - alice
 categories:
     - demo
 cover:

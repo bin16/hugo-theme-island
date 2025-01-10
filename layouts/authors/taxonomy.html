@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+    <div class="island mb-6">
+
+        <header class="island-header">
+            <h2 class="text-2xl">{{ .Title }}</h2>
+        </header>
+
+        {{ with .Params.Description }}
+            <div class="island-body text-muted">
+                {{ . }}
+            </div>
+        {{ end }}
+    </div>
+
+    <ul>
+
+        {{ range .Pages }}
+
+            <li class="island mb-4">
+                <article class="island-body flex items-stretch gap-4">
+
+                    {{ $avatar := .Resources.GetMatch .Params.avatar.image }}
+                    {{ if $avatar }}
+                        <a href="{{ .RelPermalink }}" class="avatar">
+                            <img src="{{ $avatar.RelPermalink }}" alt="{{ .LinkTitle }}">
+                        </a>
+                    {{ end }}
+
+                    <div class="flex-1 flex flex-col justify-center">
+                        <h3 class="text-2xl">
+                            <a href="{{ .RelPermalink }}">
+                                {{ .LinkTitle }}
+                            </a>
+                        </h3>
+
+                        {{ with .Params.Description }}
+                            <p class="text-muted">{{ . }}</p>
+                        {{ end }}
+                    </div>
+
+                </article>
+            </li>
+
+
+        {{ end }}
+
+    </ul>
+
+{{ end }}

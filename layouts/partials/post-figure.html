@@ -1,6 +1,56 @@
-{{ if .Params.cover.image }}
-    {{ $img := .Resources.GetMatch .Params.cover.image }}
-    {{ if $img }}
-        <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="island-img">
+{{ if not .Params.cover.image }}
+    <figure class="island-img min-h-20 relative">
+        <div class="h-20 w-full bg-slate-400"></div>
+        {{ partial "post-figure-authors.html" . }}
+    </figure>
+
+{{ else if strings.HasPrefix .Params.cover.image "http" }}
+
+    {{ $cover := resources.GetRemote .Params.cover.image }}
+    {{ if $cover }}
+        <figure class="island-img relative">
+            <img 
+                src="{{ $cover.RelPermalink }}" 
+                alt="{{ default .Title .Params.cover.alt }}" 
+                width="{{ $cover.Width }}"
+                height="{{ $cover.Height }}"
+                class="block mx-auto">
+
+            {{ partial "post-figure-authors.html" . }}
+        </figure>
     {{ end }}
+
+{{ else }}
+
+    {{ $cover := .Resources.GetMatch .Params.cover.image }}
+    {{ if $cover }}
+        <figure class="island-img relative">
+            <img 
+                src="{{ $cover.RelPermalink }}" 
+                alt="{{ default .Title .Params.cover.alt }}" 
+                width="{{ $cover.Width }}"
+                height="{{ $cover.Height }}"
+                class="block mx-auto">
+
+            {{ partial "post-figure-authors.html" . }}
+        </figure>
+
+    {{ else }}
+
+        {{ $globalCover := resources.GetMatch .Params.cover.image }}
+        {{ if $globalCover }}
+            <figure class="island-img relative">
+                <img 
+                    src="{{ $globalCover.RelPermalink }}" 
+                    alt="{{ default .Title .Params.cover.alt }}" 
+                    width="{{ $globalCover.Width }}"
+                    height="{{ $globalCover.Height }}"
+                    class="block mx-auto">
+
+                {{ partial "post-figure-authors.html" . }}
+            </figure>
+        {{ end }}
+
+    {{ end }}
+
 {{ end }}

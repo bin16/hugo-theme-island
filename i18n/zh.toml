@@ -13,6 +13,9 @@ other = "分类"
 [menu.about]
 other = "关于"
 
+[menu.authors]
+other = "作者"
+
 [page.info]
 other = "第{{.pageNum}}页，共{{.pageCount}}页"
 

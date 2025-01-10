@@ -13,6 +13,9 @@ other = "Categories"
 [menu.about]
 other = "About"
 
+[menu.authors]
+other = "Authors"
+
 [page.info]
 other = "Page {{ .pageNum }} of {{ .pageCount }}"
 

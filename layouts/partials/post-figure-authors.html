@@ -1,0 +1,19 @@
+{{ with .GetTerms "authors" }}
+    <ul class="avatar-list avatar-list-bottom-end">
+        {{ range .Reverse }}
+            <li class="avatar-list-item">
+                <a href="{{ .RelPermalink }}" class="avatar -ms-4">
+                    {{ $avatar := .Resources.GetMatch .Params.avatar.image }}
+                    {{ if $avatar }}
+                        <img 
+                            src="{{ $avatar.RelPermalink }}" 
+                            alt="{{ .LinkTitle }}"
+                            width="{{ $avatar.Width }}"
+                            height="{{ $avatar.Height }}"
+                            class="inline-block max-w-16" />
+                    {{ end }}
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

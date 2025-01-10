@@ -57,6 +57,29 @@ html {
     @apply opacity-50;
 }
 
+.avatar {
+    @apply block;
+    @apply h-8 w-8 md:h-16 md:w-16;
+    @apply border;
+    @apply rounded-sm;
+    @apply overflow-hidden;
+}
+.avatar img {
+    @apply block max-w-full;
+}
+.avatar-list {
+    @apply flex flex-row-reverse;
+}
+.avatar-list-item {
+    @apply -ms-2;
+}
+.avatar-list-top-end {
+    @apply absolute -top-4 end-4 md:-top-8;
+}
+.avatar-list-bottom-end {
+    @apply absolute -bottom-4 end-4 md:-bottom-8;
+}
+
 /* .button-group .button {
     @apply border-e-0 rounded-e-none;
     @apply last:border-e rounded-e-sm;
@@ -67,7 +90,8 @@ html {
 
 
 .island,
-.button {
+.button,
+.avatar {
     @apply bg-gray-100;
     @apply dark:bg-slate-700;
 }
@@ -86,7 +110,8 @@ html {
 .island-image,
 .button,
 .page-item-prev,
-.page-item-next {
+.page-item-next,
+.avatar {
     @apply border-gray-400;
     @apply dark:border-slate-900;
 }

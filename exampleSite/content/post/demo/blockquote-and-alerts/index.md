@@ -6,6 +6,8 @@ tags:
     - demo
     - markup/blockquote
     - markup/alert
+authors:
+    - alice
 cover:
     image: pattern.png
 ---

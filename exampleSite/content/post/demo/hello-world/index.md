@@ -6,6 +6,9 @@ cover:
     image: pattern.png
 tags:
     - demo
+authors:
+    - alice
+    - bob
 categories:
     - demo
 ---
