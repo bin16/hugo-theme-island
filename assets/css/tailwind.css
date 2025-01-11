@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @source "layouts/_default/";
 @source "layouts/partials/";
 
@@ -6,16 +6,23 @@
 @import "./code.css";
 
 .true-grid {
+    @apply p-2 md:p-0;
     @apply max-w-6xl mx-auto grid grid-cols-12 gap-4;
 }
 .true-grid-main {
-    @apply col-start-4 col-span-6;
+    @apply col-span-full;
+    @apply md:col-span-8;
+    @apply lg:col-start-4 lg:col-span-6;
 }
 .true-grid-left {
-    @apply col-start-1 col-span-3;
+    @apply col-span-full;
+    @apply md:col-span-full;
+    @apply lg:col-start-1 lg:col-span-3;
 }
 .true-grid-right {
-    @apply col-start-10 col-span-3;
+    @apply col-span-full;
+    @apply md:col-start-9 md:col-span-4;
+    @apply lg:col-start-10 lg:col-span-3;
 }
 
 .pagination,

@@ -1,6 +1,9 @@
 {{ if not .Params.cover.image }}
-    <figure class="island-img min-h-20 relative">
-        <div class="h-20 w-full bg-slate-400"></div>
+    <figure class="island-img min-h-20 relative ">
+        <a 
+            href="{{ .RelPermalink }}"
+            title="{{ .Title }}"
+            class="block w-full aspect-video bg-slate-400 bg-linear-to-r/oklch from-indigo-500 to-teal-400"></a>
         {{ partial "post-figure-authors.html" . }}
     </figure>
 
@@ -9,12 +12,14 @@
     {{ $cover := resources.GetRemote .Params.cover.image }}
     {{ if $cover }}
         <figure class="island-img relative">
-            <img 
-                src="{{ $cover.RelPermalink }}" 
-                alt="{{ default .Title .Params.cover.alt }}" 
-                width="{{ $cover.Width }}"
-                height="{{ $cover.Height }}"
-                class="block mx-auto">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                <img 
+                    src="{{ $cover.RelPermalink }}" 
+                    alt="{{ default .Title .Params.cover.alt }}" 
+                    width="{{ $cover.Width }}"
+                    height="{{ $cover.Height }}"
+                    class="block mx-auto">
+            </a>
 
             {{ partial "post-figure-authors.html" . }}
         </figure>
@@ -25,12 +30,14 @@
     {{ $cover := .Resources.GetMatch .Params.cover.image }}
     {{ if $cover }}
         <figure class="island-img relative">
-            <img 
-                src="{{ $cover.RelPermalink }}" 
-                alt="{{ default .Title .Params.cover.alt }}" 
-                width="{{ $cover.Width }}"
-                height="{{ $cover.Height }}"
-                class="block mx-auto">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                <img 
+                    src="{{ $cover.RelPermalink }}" 
+                    alt="{{ default .Title .Params.cover.alt }}" 
+                    width="{{ $cover.Width }}"
+                    height="{{ $cover.Height }}"
+                    class="block mx-auto">
+            </a>
 
             {{ partial "post-figure-authors.html" . }}
         </figure>
@@ -40,12 +47,14 @@
         {{ $globalCover := resources.GetMatch .Params.cover.image }}
         {{ if $globalCover }}
             <figure class="island-img relative">
-                <img 
-                    src="{{ $globalCover.RelPermalink }}" 
-                    alt="{{ default .Title .Params.cover.alt }}" 
-                    width="{{ $globalCover.Width }}"
-                    height="{{ $globalCover.Height }}"
-                    class="block mx-auto">
+                <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                    <img 
+                        src="{{ $globalCover.RelPermalink }}" 
+                        alt="{{ default .Title .Params.cover.alt }}" 
+                        width="{{ $globalCover.Width }}"
+                        height="{{ $globalCover.Height }}"
+                        class="block mx-auto">
+                </a>
 
                 {{ partial "post-figure-authors.html" . }}
             </figure>

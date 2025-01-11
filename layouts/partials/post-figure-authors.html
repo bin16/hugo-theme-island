@@ -2,7 +2,7 @@
     <ul class="avatar-list avatar-list-bottom-end">
         {{ range .Reverse }}
             <li class="avatar-list-item">
-                <a href="{{ .RelPermalink }}" class="avatar -ms-4">
+                <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}" class="avatar -ms-4 relative z-10">
                     {{ $avatar := .Resources.GetMatch .Params.avatar.image }}
                     {{ if $avatar }}
                         <img 
