@@ -45,7 +45,7 @@ summaryLength = 128
       DateFormat = "Oct 15, 2006" 
   [languages.zh]
     disabled = false
-    languageCode = 'zh-Hans'
+    languageCode = 'zh-CN'
     # languageDirection = ''
     languageName = '中文'
     title = '示例网站'

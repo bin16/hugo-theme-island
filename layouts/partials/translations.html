@@ -1,0 +1,16 @@
+{{ if .IsTranslated }}
+    <div class="island mb-4">
+        <header class="island-header">{{ i18n "article.translations" }}</header>
+        <div class="island-body">
+            <ul>
+                {{ range .Translations }}
+                    <li>
+                        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
+                            {{ .Title }} ({{ .Language.LanguageName }})
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+{{ end }}

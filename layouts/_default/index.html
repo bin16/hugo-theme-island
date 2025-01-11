@@ -1,14 +1,18 @@
 {{ define "main" }}
-    <main>
         
-        {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-        {{ $paginator := .Paginate $pages.ByDate.Reverse }}
-        
-        {{ range $paginator.Pages }}
-            {{ partial "post-card.html" . }}
-        {{ end }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $paginator := .Paginate $pages.ByDate.Reverse }}
+    
+    {{ range $paginator.Pages }}
+        {{ partial "post-card.html" . }}
+    {{ end }}
 
-        {{ partial "pagination.html" $paginator }}
+    {{ partial "pagination.html" $paginator }}
 
-    </main>
+{{ end }}
+
+{{ define "side" }}
+
+    {{ partial "translations.html" . }}
+
 {{ end }}

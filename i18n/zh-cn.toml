@@ -1,0 +1,32 @@
+[menu.home]
+other = "主页"
+
+[menu.archives]
+other = "归档"
+
+[menu.tags]
+other = "标签"
+
+[menu.categories]
+other = "分类"
+
+[menu.about]
+other = "关于"
+
+[menu.authors]
+other = "作者"
+
+[page.info]
+other = "第{{.pageNum}}页，共{{.pageCount}}页"
+
+[page.prev]
+other = "Prev"
+
+[page.next]
+other = "Next"
+
+[article.toc]
+other = "目录"
+
+[article.translations]
+other = "翻译"
