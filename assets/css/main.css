@@ -1,4 +1,4 @@
-/*! tailwindcss v4.0.0-beta.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.0.0-beta.9 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
 @layer theme {
   :root {
@@ -270,7 +270,6 @@
     --container-5xl: 64rem;
     --container-6xl: 72rem;
     --container-7xl: 80rem;
-    --container-prose: 65ch;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -456,7 +455,7 @@
     display: list-item;
   }
   ol, ul, menu {
-    list-style: none;
+    list-style-type: none;
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
@@ -562,6 +561,9 @@
   }
   .left-4 {
     left: calc(var(--spacing) * 4);
+  }
+  .z-10 {
+    z-index: 10;
   }
   .z-50 {
     z-index: 50;
@@ -1231,6 +1233,9 @@
   .table {
     display: table;
   }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
   .size-4 {
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
@@ -1238,9 +1243,6 @@
   .size-6 {
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
-  }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
   }
   .h-full {
     height: 100%;
@@ -1356,6 +1358,18 @@
   }
   .bg-slate-400 {
     background-color: var(--color-slate-400);
+  }
+  .bg-linear-to-r\/oklch {
+    --tw-gradient-position: to right in oklch,;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-indigo-500 {
+    --tw-gradient-from: var(--color-indigo-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,) var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-teal-400 {
+    --tw-gradient-to: var(--color-teal-400);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,) var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
@@ -1657,6 +1671,10 @@
   }
 }
 .true-grid {
+  padding: calc(var(--spacing) * 2);
+  @media (width >= 48rem) {
+    padding: calc(var(--spacing) * 0);
+  }
   margin-inline: auto;
   display: grid;
   max-width: var(--container-6xl);
@@ -1664,16 +1682,43 @@
   gap: calc(var(--spacing) * 4);
 }
 .true-grid-main {
-  grid-column: span 6 / span 6;
-  grid-column-start: 4;
+  grid-column: 1 / -1;
+  @media (width >= 48rem) {
+    grid-column: span 8 / span 8;
+  }
+  @media (width >= 64rem) {
+    grid-column: span 6 / span 6;
+  }
+  @media (width >= 64rem) {
+    grid-column-start: 4;
+  }
 }
 .true-grid-left {
-  grid-column: span 3 / span 3;
-  grid-column-start: 1;
+  grid-column: 1 / -1;
+  @media (width >= 48rem) {
+    grid-column: 1 / -1;
+  }
+  @media (width >= 64rem) {
+    grid-column: span 3 / span 3;
+  }
+  @media (width >= 64rem) {
+    grid-column-start: 1;
+  }
 }
 .true-grid-right {
-  grid-column: span 3 / span 3;
-  grid-column-start: 10;
+  grid-column: 1 / -1;
+  @media (width >= 48rem) {
+    grid-column: span 4 / span 4;
+  }
+  @media (width >= 48rem) {
+    grid-column-start: 9;
+  }
+  @media (width >= 64rem) {
+    grid-column: span 3 / span 3;
+  }
+  @media (width >= 64rem) {
+    grid-column-start: 10;
+  }
 }
 .pagination, .island, .button {
   border-radius: var(--radius-sm);
@@ -1898,6 +1943,15 @@ body {
       --tw-skew-x: skewX(0);
       --tw-skew-y: skewY(0);
       --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
       --tw-leading: initial;
     }
@@ -1958,6 +2012,48 @@ body {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 @property --tw-font-weight {
   syntax: "*";

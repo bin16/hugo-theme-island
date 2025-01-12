@@ -4,15 +4,16 @@
   "scripts": {
     "watch-css": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
     "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css",
-    "dev": "hugo server -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D"
+    "dev": "hugo server -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D",
+    "hugo": "hugo server --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.0-beta.8",
+    "@tailwindcss/cli": "^4.0.0-beta.9",
     "@tailwindcss/typography": "^0.5.15",
-    "tailwindcss": "^4.0.0-beta.8"
+    "tailwindcss": "^4.0.0-beta.9"
   }
 }

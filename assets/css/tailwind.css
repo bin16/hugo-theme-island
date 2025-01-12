@@ -1,8 +1,14 @@
 @import "tailwindcss";
-@source "layouts/_default/";
-@source "layouts/partials/";
 
-@plugin '@tailwindcss/typography';
+/* for Hugo css.TailwindCSS, relative path failed to read class names */
+/* @source "../../layouts/"; */
+
+/* Hugo css.TailwindCSS requires this to read classnames. */
+@source "layouts";
+
+@plugin "@tailwindcss/typography";
+
+/* chroma highlights */
 @import "./code.css";
 
 .true-grid {
@@ -92,14 +98,7 @@
     @apply absolute -bottom-4 end-4 md:-bottom-8;
 }
 
-/* .button-group .button {
-    @apply border-e-0 rounded-e-none;
-    @apply last:border-e rounded-e-sm;
-} */
-
-/******************** DARK ********************/
-
-
+/******************** COLOR ********************/
 
 .island,
 .button,

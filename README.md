@@ -24,3 +24,23 @@ See:
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
 ```
+
+## Development
+
+### Method A. - Using [Hugo's css.TailwindCSS feature](https://gohugo.io/functions/css/tailwindcss/)
+
+``` sh
+npm run dev
+```
+
+### Method B. - Using `@tailwindcss/cli`
+
+With two consoles:
+
+```sh
+npm run watch-css
+```
+
+```sh
+npm run hugo
+```
