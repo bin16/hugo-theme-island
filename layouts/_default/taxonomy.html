@@ -4,13 +4,13 @@
 
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
-        {{ range .Data.Terms.ByCount }}
+        {{ range .Data.Terms.Alphabetical }}
             <li class="w-full h-full">
                 <a  
                     href="{{ .Page.RelPermalink }}"
                     class="button block w-full h-full island transition-colors">
                     <div class="w-full h-full flex items-center justify-between">
-                        <h2 class="text-xl">
+                        <h2>
                             <span class="text-muted">#</span>
                             <span href="{{ .Page.RelPermalink }}">
                                 {{ .Page.LinkTitle }}

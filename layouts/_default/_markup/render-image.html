@@ -1,11 +1,45 @@
+
 <div class="flex flex-col items-center">
     <figure class="island mx-auto w-auto not-prose overflow-hidden">
-        <img 
-            class="island-img"
-            src="{{ .Destination | safeURL }}"
-          {{- with .PlainText }} alt="{{ . }}"{{ end -}}
-          {{- with .Title }} title="{{ . }}"{{ end -}}
-        >
+
+
+        {{ if strings.HasPrefix .Destination "http:" }}
+
+            <img 
+                class="island-img"
+                src="{{ .Destination }}"
+                loading="lazy"
+                alt="{{ if .PlainText }}{{ . }}{{ end }}"
+                title="{{ if .Title }}{{ . }}{{ end }}"
+            />
+
+        {{ else if strings.HasPrefix .Destination "https:" }}
+
+            <img 
+                class="island-img"
+                src="{{ .Destination }}"
+                loading="lazy"
+                alt="{{ if .PlainText }}{{ . }}{{ end }}"
+                title="{{ if .Title }}{{ . }}{{ end }}"
+            />
+
+        {{ else }}
+        
+            {{ $img := .Page.Resources.GetMatch .Destination }}
+            {{ if $img }}
+
+                <img 
+                    class="island-img"
+                    src="{{ $img.RelPermalink }}"
+                    width="{{ $img.Width }}"
+                    height="{{ $img.Height }}"
+                    loading="lazy"
+                    alt="{{ if .PlainText }}{{ . }}{{ end }}"
+                    title="{{ if .Title }}{{ . }}{{ end }}"
+                />
+
+            {{ end }}
+        {{ end }}
     
         {{- with .Title }}
             <figcaption class="island-body text-sm text-muted">
