@@ -5,7 +5,7 @@
     "watch-css": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
     "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css",
     "dev": "hugo server -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D",
-    "hugo": "hugo server --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D"
+    "hugo": "hugo server -D --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender"
   },
   "keywords": [],
   "author": "",

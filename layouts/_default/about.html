@@ -1,12 +1,9 @@
 {{ define "main" }}
 
-    <main>
+    {{ partial "main-island.html" . }}
 
-        
-        <div class="prose">
-            {{ .Content }}
-        </div>
-
-    </main>
+    <div class="prose">
+        {{ .Content }}
+    </div>
 
 {{ end }}

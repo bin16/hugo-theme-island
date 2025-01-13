@@ -4,7 +4,7 @@
 /* @source "../../layouts/"; */
 
 /* Hugo css.TailwindCSS requires this to read classnames. */
-@source "layouts";
+/* @source "layouts"; */
 
 @plugin "@tailwindcss/typography";
 
@@ -95,7 +95,7 @@
     @apply absolute -top-4 end-4 md:-top-8;
 }
 .avatar-list-bottom-end {
-    @apply absolute -bottom-4 end-4 md:-bottom-8;
+    @apply absolute -bottom-2 end-4 md:-bottom-4;
 }
 
 /******************** COLOR ********************/
@@ -166,4 +166,13 @@ html,
 body {
     @apply bg-gray-200;
     @apply dark:bg-slate-800;
+}
+
+.no-image {
+    /* @apply  aspect-video bg-slate-400 bg-linear-to-r/oklch from-indigo-500 to-teal-400; */
+    @apply aspect-video;
+    @apply bg-slate-200 dark:bg-slate-700;
+    @apply bg-linear-to-br/oklch;
+    @apply from-blue-500 to-purple-400;
+    @apply dark:from-blue-700 dark:to-purple-700;
 }

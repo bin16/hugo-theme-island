@@ -1,0 +1,30 @@
+<div class="island mb-4">
+
+    {{ partial "post-figure.html" . }}
+
+    <header class="island-header relative">
+        {{ $img := .Resources.GetMatch .Params.avatar.image }}
+        {{ if $img }}
+
+        <ul class="avatar-list avatar-list-top-end">
+            <li class="avatar-list-item">
+                <div class="avatar">
+                    <img 
+                    src="{{ $img.RelPermalink }}" 
+                    alt="{{ .LinkTitle }}"
+                    class="inline-block max-w-16" />
+                </div>
+            </li>
+        </ul>
+
+        {{ end }}
+        
+        <h2 class="text-2xl">{{ .Title }}</h2>
+    </header>
+
+    {{ with .Params.Description }}
+        <div class="island-body text-muted">
+            {{ . }}
+        </div>
+    {{ end }}
+</div>

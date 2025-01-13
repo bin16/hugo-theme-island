@@ -1,12 +1,6 @@
 {{ define "main" }}
-    <div class="island mb-6">
-        <div class="island-header">
-            <h2>{{ .Title }}</h2>
-        </div>
-        {{ with .Summary }}
-            <div class="island-body">{{ . }}</div>
-        {{ end }}
-    </div>
+
+    {{ partial "main-island.html" . }}
 
     <div class="main-content">
         <ul>
@@ -17,6 +11,6 @@
             {{ end }}
         </ul>
 
-        {{ partial "pagination.html" .Paginator }}
+        {{ partial "page-nav.html" .Paginator }}
     </div>
 {{ end }}

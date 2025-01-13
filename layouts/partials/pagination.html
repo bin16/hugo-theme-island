@@ -1,17 +1,17 @@
 <nav class="my-4 flex items-stretch justify-stretch button-group">
     {{ with .Prev }}
-        <a href="{{ .URL }}" class="button border-s-0 rounded-s-none page-item-prev">
+        <a href="{{ .URL }}" class="button border-s-0 rounded-s-none page-item-prev flex items-center justify-start gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
-            <span class="sr-only">{{ i18n "page.prev" }}</span>
+            <span class="">{{ i18n "page.prev" }}</span>
         </a>
     {{ else }}
-        <span class="button border-s-0 rounded-s-none disabled page-item-prev">
+        <span class="button border-s-0 rounded-s-none disabled page-item-prev flex items-center justify-start gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
-            <span class="sr-only">{{ i18n "page.prev" }}</span>
+            <span class="">{{ i18n "page.prev" }}</span>
         </span>
     {{ end }}
 
@@ -22,18 +22,18 @@
     </span>
 
     {{ with .Next }}
-        <a href="{{ .URL }}" class="button border-e-0 rounded-e-0 page-item-next">
+        <a href="{{ .URL }}" class="button border-e-0 rounded-e-0 page-item-next flex items-center justify-end">
+            <span class="">{{ "page.next" | i18n }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
-            <span class="sr-only">{{ "page.next" | i18n }}</span>
         </a>
     {{ else }}
-        <span class="button border-e-0 rounded-e-0 disabled page-item-next">
+        <span class="button border-e-0 rounded-e-0 disabled page-item-next flex items-center justify-end">
+            <span class="">{{ "page.next" | i18n }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
-            <span class="sr-only">{{ "page.next" | i18n }}</span>
         </span>
     {{ end }}
 </nav>

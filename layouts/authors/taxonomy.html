@@ -1,21 +1,10 @@
 {{ define "main" }}
 
-    <div class="island mb-6">
-
-        <header class="island-header">
-            <h2 class="text-2xl">{{ .Title }}</h2>
-        </header>
-
-        {{ with .Params.Description }}
-            <div class="island-body text-muted">
-                {{ . }}
-            </div>
-        {{ end }}
-    </div>
+    {{ partial "main-island.html" . }}
 
     <ul>
 
-        {{ range .Pages }}
+        {{ range .Pages.ByLinkTitle }}
 
             <li class="island mb-4">
                 <article class="island-body flex items-stretch gap-4">

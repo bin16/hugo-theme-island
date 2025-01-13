@@ -3,16 +3,6 @@
 {{ end }}
 
 {{ define "side" }}
-    {{ with .TableOfContents }}
-        <div class="island mb-4">
-            <header class="island-header">
-                {{ i18n "article.toc" }}
-            </header>
-            <div class="island-body prose dark:prose-invert prose-a:no-underline prose-a:hover:underline">
-                {{ . }}
-            </div>
-        </div>
-    {{ end }}
-
+    {{ partial "toc.html" . }}
     {{ partial "translations.html" . }}
 {{ end }}

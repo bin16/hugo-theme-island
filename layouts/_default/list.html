@@ -1,11 +1,24 @@
-{{ define "main" }}
-    <h1 class="title">{{ .Title }}</h1>
+{{ define "head-append" }}
 
+    {{ with .Paginator.Prev }}
+        <link rel="prev" href="{{ .URL }}">
+    {{ end }}
+
+    {{ with .Paginator.Next }}
+        <link rel="next" href="{{ .URL }}">
+    {{ end }}
+
+{{ end }}
+
+{{ define "main" }}
+
+    {{ partial "main-island.html" . }}
+ 
     {{ range .Paginator.Pages }}
         {{ partial "post-card.html" . }}
     {{ end }}
 
-    {{ partial "pagination.html" .Paginator }}
+    {{ partial "page-nav.html" .Paginator }}
 
 {{ end }}
 

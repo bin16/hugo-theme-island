@@ -1,4 +1,4 @@
-<aside class="fixed left-4 bottom-4 flex flex-col gap-2">
+<aside class="fixed left-4 bottom-4 flex flex-col gap-2 z-50">
     <a 
         href="#top"
         class="button">
@@ -15,23 +15,26 @@
         </svg>
     </button>
 </aside>
-<nav id="screen-nav" class="hidden screen-nav fixed top-0 left-0 bottom-0 right-0 bg-slate-100">
+<nav id="screen-nav" class="hidden screen-nav fixed top-0 left-0 bottom-0 right-0 bg-slate-100 z-50">
     <div class="absolute left-4 bottom-4">
         <button 
-            data-close="#screen-nav"
-            class="button">
+        data-close="#screen-nav"
+        class="button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
-    <ul class="w-1/2 mx-auto h-full p-4 flex flex-col items-stretch justify-center gap-4">
-        {{ range site.Menus.main }}
-            <li>
-                <a href="{{ .URL }}" class="block button uppercase">{{ .Name }}</a>
-            </li>
-        {{ end }}
-    </ul>
+    <div class="grid grid-cols-2 p-4 gap-2">
+        <ul class="mx-auto py-4 flex flex-col items-stretch justify-center gap-4">
+            {{ range site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}" class="block button uppercase">{{ .Name }}</a>
+                </li>
+            {{ end }}
+        </ul>
+        {{- partial "translations.html" . }}
+    </div>
 </nav>
 <script>
 (function() {
