@@ -3,23 +3,22 @@
     {{ partial "post-figure.html" . }}
 
     <header class="island-header relative">
-        {{ $img := .Resources.GetMatch .Params.avatar.image }}
-        {{ if $img }}
-
-        <ul class="avatar-list avatar-list-top-end">
-            <li class="avatar-list-item">
-                <div class="avatar">
-                    <img 
-                    src="{{ $img.RelPermalink }}" 
-                    alt="{{ .LinkTitle }}"
-                    class="inline-block max-w-16" />
-                </div>
-            </li>
-        </ul>
-
-        {{ end }}
-        
-        <h2 class="text-2xl">{{ .Title }}</h2>
+        <h2 class="text-2xl flex items-center justify-start gap-2">
+            {{ if eq .Section "archives" }}
+                {{- partial "icon.html" "bootstrap/archive" }}
+            {{ else if eq .Section "authors" }}
+                {{- partial "icon" "user-circle"}}
+            {{ else if eq .Section "tags" }}
+                {{- partial "icon" "tag"}}
+            {{ else if eq .Section "about" }}
+                {{- partial "icon" "information-circle"}}
+            {{ else if eq .Section "categories" }}
+                {{- partial "icon" "bookmark"}}
+            {{ else }}
+                <span>{{ .Section }}</span>
+            {{ end }}
+            <span>{{ .Title }}</span>
+        </h2>
     </header>
 
     {{ with .Params.Description }}

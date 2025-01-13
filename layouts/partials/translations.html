@@ -7,16 +7,21 @@
             
             {{ i18n "article.translations" }}
         </header>
-        <div class="island-body">
-            <ul>
-                {{ range .Translations }}
-                    <li>
-                        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
-                            {{ .Title }} ({{ .Language.LanguageName }})
-                        </a>
-                    </li>
-                {{ end }}
-            </ul>
-        </div>
+
+        <ul>
+            {{ range .Translations }}
+                <li>
+                    <a 
+                        class="flex items-center justify-between p-4 action"
+                        href="{{ .RelPermalink }}" 
+                        hreflang="{{ .Language.LanguageCode }}">
+                        <span>{{ .Title }}</span>
+                        <span class="text-muted">
+                            ({{ .Language.LanguageName }})
+                        </span>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
     </div>
 {{ end }}

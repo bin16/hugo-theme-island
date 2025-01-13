@@ -1,6 +1,6 @@
 <article class="">
 
-    <div class="island mb-6">
+    <div class="island mb-4">
         {{ partial "post-figure.html" . }}
 
         <header class="island-header relative">
@@ -19,7 +19,7 @@
         </footer>
     </div>
 
-    <div class="button-group gap-2 mb-4 flex items-stretch">
+    <div class="button-group gap-4 mb-4 flex items-stretch">
         {{ with .Next }}
         <a 
             href="{{ .RelPermalink }}"
@@ -31,13 +31,14 @@
                 <span>{{ .Title }}</span>
             </a>
         {{ else }}
-            <span class="button disabled flex flex-1 gap-2 items-center justify-start">
+            {{/*  <span class="button disabled flex flex-1 gap-2 items-center justify-start">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
 
                 <span>&nbsp;</span>
-            </span>
+            </span>  */}}
+            <span></span>
         {{ end }}
 
         {{ with .Prev }}
@@ -52,13 +53,14 @@
                 </svg>
             </a>
         {{ else }}
-            <span class="button disabled flex-1 flex gap-2 items-center justify-end">
+            {{/*  <span class="button disabled flex-1 flex gap-2 items-center justify-end">
                 <span>&nbsp;</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
-            </span>
+            </span>  */}}
+            <span></span>
         {{ end }}
     </div>
 
