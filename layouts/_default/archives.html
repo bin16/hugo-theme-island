@@ -1,13 +1,28 @@
+{{ define "head-append" }}
+
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $paginator := .Paginate ($pages.GroupByDate "2006") 100 }}
+
+    {{ with $paginator.Prev }}
+        <link rel="prev" href="{{ .URL }}">
+    {{ end }}
+
+    {{ with $paginator.Next }}
+        <link rel="next" href="{{ .URL }}">
+    {{ end }}
+
+{{ end }}
+
 {{ define "main" }}
 
-    <div class="island mb-6">
+    <div class="island mb-4">
         <div class="island-body flex flex-col gap-2">
             <h1 class="text-2xl">{{ .Title }}</h1>
             {{- partial "post-summary.html" . }}
         </div>
     </div>
 
-    {{ $pages := where site.RegularPages "Type" "post" }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
     {{ $paginator := .Paginate ($pages.GroupByDate "2006") 100 }}
 
     {{ range $paginator.PageGroups }}
@@ -33,6 +48,6 @@
         </article>
     {{ end }}
 
-    {{ partial "pagination.html" $paginator }}
+    {{ partial "page-nav.html" $paginator }}
 
 {{ end }}

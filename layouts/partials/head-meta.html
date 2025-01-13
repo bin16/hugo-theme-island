@@ -1,11 +1,14 @@
+<!-- Site -->
+<meta property="og:site_name" content="{{ site.Title }}" />
+
 <!-- Title -->
-{{ if .IsHome }}
+{{- if .IsHome }}
     <title>{{ site.Title }}</title>
     <meta name="og:title" content="{{ site.Title }}" />
-{{ else }}
+{{- else }}
     <title>{{ .Title }} - {{ site.Title }}</title>
     <meta name="og:title" content="{{ .Title }} - {{ site.Title }}" />
-{{ end }}
+{{- end }}
 
 <!-- Description -->
 {{- if .IsHome -}}
@@ -14,27 +17,29 @@
 {{- else if .Params.Description -}}
     <meta name="description" content="{{ .Params.Description }}" />
     <meta property="og:description" content="{{ .Params.Description }}" />
-{{ else }}
+{{- else }}
     <meta name="description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />
     <meta property="og:description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />
 {{- end }}
 
 <!-- URL -->
 <link rel="canonical" href="{{ .Permalink }}" />
-<!-- TODO: -->
 <meta property="og:url" content="{{ .Permalink }}" />
 
-<!-- TODO: -->
-<!-- Pagination -->
-
-{{ if .IsHome }}
+{{- if .IsHome }}
     <meta property="og:type" content="website" />
-{{ end }}
+{{- end }}
 
+{{/*  <link rel="alternate" type="application/rss+xml" href="">  */}}
+{{/*  <link rel="alternate" type="application/json" href="">  */}}
+<meta property="og:locale" content="{{ .Language.LanguageCode }}" />
+{{- range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+    <meta property="og:locale:alternate" content="{{ .Language.LanguageCode }}" />
+{{- end }}
 
+    {{ hugo.Generator }}
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="canonical" href="{{ .Permalink }}" />
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{- partial "head-image.html" . }}

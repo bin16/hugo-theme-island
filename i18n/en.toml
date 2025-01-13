@@ -20,13 +20,17 @@ other = "Authors"
 other = "Page {{ .pageNum }} of {{ .pageCount }}"
 
 [page.prev]
-other = "Previous"
+other = "Previous page"
 
 [page.next]
-other = "Next"
+other = "Next page"
 
 [article.toc]
 other = "Table of Contents"
 
 [article.translations]
 other = "Translations"
+
+[nav.goTop]
+other = "Back to Top"
+
