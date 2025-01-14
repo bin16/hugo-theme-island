@@ -6,7 +6,12 @@
                 <a href="/">
                     {{ $logo := resources.GetMatch site.Params.logo }}
                     {{ if $logo }}
-                        <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}" class="site-icon inline-block max-h-8 me-2">
+                        <img 
+                            width="{{ $logo.Width }}"
+                            height="{{ $logo.Height }}"
+                            src="{{ $logo.RelPermalink }}" 
+                            alt="{{ site.Title }}" 
+                            class="site-icon inline-block max-h-8 me-2 w-auto">
                         <span class="site-title">{{ site.Title }}</span>
                     {{ else }}
                         <span class="site-title">{{ site.Title }}</span>
