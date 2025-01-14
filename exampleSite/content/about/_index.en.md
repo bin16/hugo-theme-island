@@ -1,7 +1,9 @@
 ---
 date: '2025-01-09T15:03:11+08:00'
 draft: false
-title: '关于'
+title: 'About'
+cover:
+    image: about.png
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus sapien sed lorem accumsan lacinia. Fusce rutrum nibh pharetra volutpat bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque pulvinar rutrum lectus, eget aliquet dui tincidunt eu. Cras id venenatis ante. Fusce semper pretium nisi non blandit. Sed hendrerit dapibus metus non accumsan. Donec auctor nunc eget eleifend interdum. Nulla ac tellus et turpis hendrerit euismod. Vestibulum magna nunc, scelerisque in libero ac, dictum hendrerit sapien. Donec luctus placerat eleifend. Vestibulum viverra mauris tempus scelerisque pharetra. Quisque euismod leo eget augue convallis pharetra. Vestibulum porta massa vel lobortis blandit. Aenean hendrerit mollis odio id dictum.

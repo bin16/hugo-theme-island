@@ -32,16 +32,16 @@
             </header>
             <ul class="flex flex-col">
                 {{ range .Pages }}
-                    <li class="border-t border-muted flex flex-wrap items-stretch">
+                    <li class="border-t border-muted flex items-stretch">
+                        <div class="border-e border-muted px-2 py-1 md:px-4 md:py-2 flex items-center justify-center">
+                            <span class="text-sm md:text-base text-muted">{{ .Date.Format "01/02" }}</span>
+                        </div>
+
                         <h3 class="flex-1">
                             <a class="block px-4 py-2 action" href="{{ .RelPermalink }}">
                                 {{ .LinkTitle }}
                             </a>
                         </h3>
-
-                        <div class="border-s border-muted px-4 py-2 flex items-center justify-center">
-                            {{ partial "post-date.html" . }}
-                        </div>
                     </li>
                 {{ end }}
             </ul>
@@ -50,4 +50,8 @@
 
     {{ partial "page-nav.html" $paginator }}
 
+{{ end }}
+
+{{ define "side" }}
+    {{ partial "translations.html" . }}
 {{ end }}

@@ -1,6 +1,5 @@
 ---
-title: "标签"
-description: "一大堆标签"
+title: "Tags"
+description: "So many tags"
+icon: "tag"
 ---
-
-标签内容巴拉巴拉

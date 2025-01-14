@@ -12,26 +12,29 @@ summaryLength = 128
     name = 'Home'
     pageRef = '/'
     weight = 10
+      [[menus.main.params]]
+        icon = "home"
   [[menus.main]]
     identifier = "menu.tags"
     name = 'Tags'
     pageRef = '/tags'
     weight = 20
+      [[menus.main.params]]
+        icon = "tag"
   [[menus.main]]
     identifier = "menu.archives"
     name = 'Archives'
     pageRef = '/archives'
     weight = 30
+      [[menus.main.params]]
+        icon = "archive-box"
   [[menus.main]]
     identifier = "menu.authors"
     name = 'Authors'
     pageRef = '/authors'
     weight = 40
-  [[menus.main]]
-    identifier = "menu.about"
-    name = 'About'
-    pageRef = '/about'
-    weight = 50
+      [[menus.main.params]]
+        icon = "user-circle"
 
 [languages]
   [languages.en]
@@ -43,19 +46,19 @@ summaryLength = 128
     title = 'ExampleSite'
     [languages.en.params]
       DateFormat = "Oct 15, 2006" 
-  [languages.zh]
+  [languages.zh-CN]
     disabled = false
     languageCode = 'zh-CN'
     # languageDirection = ''
     languageName = '中文'
     title = '示例网站'
     weight = 10
-    [languages.zh.params]
+    [languages.zh-CN.params]
       DateFormat = "2006-01-02" 
 
 [pagination]
 disableAliases = false
-pagerSize = 5
+pagerSize = 2
 path = 'page'
 
 [permalinks]
