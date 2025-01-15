@@ -2,7 +2,7 @@
 
 Based on [Tailwind CSS 4.0](https://tailwindcss.com/docs/v4-beta), work in progress.
 
-![hugo-theme-island screenshot](images/screenshot.png)
+![hugo-theme-island screenshot](https://raw.githubusercontent.com/bin16/hugo-theme-island/main/images/screenshot.png)
 
 ## Development
 

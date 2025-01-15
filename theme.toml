@@ -1,0 +1,45 @@
+name = "hugo-theme-island"
+license = "MIT"
+licenselink = "https://github.com/bin16/hugo-theme-island/blob/main/LICENSE"
+description = "Yet another hugo theme, based on Tailwind CSS v4."
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/bin16/hugo-theme-island/"
+
+# If you have a running demo of the theme.
+demosite = "https://hugo-theme-island.netlify.app/"
+
+tags = [
+    "blog", 
+    "minimal", 
+    "light", 
+    "dark", 
+    "personal", 
+    "Dark Mode",
+]
+features = [
+    "responsive",
+    "cover-image",
+    "table-of-contents",
+    "opengraph",
+    "multilingual",
+    "cover",
+    "archive",
+]
+
+# # If the theme has multiple authors
+# authors = [
+#   {name = "Name of author", homepage = "Website of author"},
+#   {name = "Name of author", homepage = "Website of author"}
+# ]
+
+# If the theme has a single author
+[author]
+    name = "rect"
+    homepage = "https://rect.page/"
+
+# # If porting an existing theme
+# [original]
+#     author = "Name of original author"
+#     homepage = "Link to website of original author"
+#     repo = "Link to source code of original theme"

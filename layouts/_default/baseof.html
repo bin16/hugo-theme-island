@@ -34,9 +34,23 @@
 
         <div class="true-grid">
             <div class="col-span-full">
-                <p class="py-6 text-muted text-center">
-                    &copy;&nbsp;{{ site.Title }}
-                </p>
+                <div class="py-6 flex flex-col gap-1 items-center justify-center">
+                    <p class="text-muted">
+                        &copy;&nbsp;{{ site.Title }}
+                    </p>
+                    <p class="text-xs text-slate-400 dark:text-slate-600">
+                        Powered by 
+                        <a class="underline" 
+                            rel="noopener"
+                            target="_blank"
+                            href="https://gohugo.io/">Hugo</a>
+                        and
+                        <a class="underline"
+                            rel="noopener" 
+                            target="_blank"
+                            href="https://github.com/bin16/hugo-theme-island/">Island</a>
+                    </p>
+                </div>
             </div>
         </div>
 
