@@ -1,7 +1,8 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "hugo-theme-pixel"
+baseURL = "https://hugo-theme-island.netlify.app/"
+languageCode = "en-us"
+title = "ExampleSite"
+description = "demo site of hugo-theme-island"
+theme = "hugo-theme-island"
 themesdir = "../.."
 
 summaryLength = 128
@@ -9,78 +10,79 @@ summaryLength = 128
 [menus]
   [[menus.main]]
     identifier = "menu.home"
-    name = 'Home'
-    pageRef = '/'
+    name = "Home"
+    pageRef = "/"
     weight = 10
-      [[menus.main.params]]
-        icon = "home"
+    [[menus.main.params]]
+      icon = "home"
   [[menus.main]]
     identifier = "menu.tags"
-    name = 'Tags'
-    pageRef = '/tags'
+    name = "Tags"
+    pageRef = "/tags"
     weight = 20
-      [[menus.main.params]]
-        icon = "tag"
+    [[menus.main.params]]
+      icon = "tag"
   [[menus.main]]
     identifier = "menu.archives"
-    name = 'Archives'
-    pageRef = '/archives'
+    name = "Archives"
+    pageRef = "/archives"
     weight = 30
-      [[menus.main.params]]
-        icon = "archive-box"
+    [[menus.main.params]]
+      icon = "archive-box"
   [[menus.main]]
     identifier = "menu.authors"
-    name = 'Authors'
-    pageRef = '/authors'
+    name = "Authors"
+    pageRef = "/authors"
     weight = 40
-      [[menus.main.params]]
-        icon = "user-circle"
+    [[menus.main.params]]
+      icon = "user-circle"
 
 [languages]
   [languages.en]
     disabled = false
-    languageCode = 'en'
-    # languageDirection = ''
-    languageName = 'English'
+    languageCode = "en"
+    # languageDirection = ""
+    languageName = "English"
     weight = 0
-    title = 'ExampleSite'
+    title = "ExampleSite"
     [languages.en.params]
-      DateFormat = "Oct 15, 2006" 
+      Logo = "demo-logo.png"
+      DateFormat = "Oct 15, 2006"
   [languages.zh-CN]
     disabled = false
-    languageCode = 'zh-CN'
-    # languageDirection = ''
-    languageName = '中文'
-    title = '示例网站'
+    languageCode = "zh-CN"
+    # languageDirection = ""
+    languageName = "中文"
+    title = "示例网站"
     weight = 10
     [languages.zh-CN.params]
-      DateFormat = "2006-01-02" 
+      Logo = "demo-logo.png"
+      DateFormat = "2006-01-02"
 
 [pagination]
-disableAliases = false
-pagerSize = 2
-path = 'page'
+  disableAliases = false
+  pagerSize = 2
+  path = "page"
 
 [permalinks]
-authors = "/u/:slug/"
+  authors = "/u/:slug/"
 
 [Taxonomies]
-    tag = "tags"
-    category = "categories"
-    author = "authors"
+  tag = "tags"
+  category = "categories"
+  author = "authors"
 
 [params]
-  logo = "fake-logo.png"
+  logo = "demo-logo.png"
   mainSections = ["post", "doc"]
   DateFormat = "01/02"
 
 [markup]
-    [markup.goldmark]
-        [markup.goldmark.parser]
-            wrapStandAloneImageWithinParagraph = false
-            [markup.goldmark.parser.attribute]
-                block = true
-    [markup.highlight]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      [markup.goldmark.parser.attribute]
+        block = true
+      [markup.highlight]
         style = "github"
         noClasses = false
-        

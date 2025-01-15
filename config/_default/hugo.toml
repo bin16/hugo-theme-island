@@ -1,11 +1,11 @@
 defaultContentLanguage = "en"
 
-summaryLength = 75
+summaryLength = 128
 
 [pagination]
     disableAliases = false
     pagerSize = 5
-    path = 'page'
+    path = "page"
 
 [Taxonomies]
     tag = "tags"
@@ -20,3 +20,10 @@ summaryLength = 75
     [markup.highlight]
         style = "github"
         noClasses = false
+
+# https://github.com/gohugoio/hugoThemesSiteBuilder?tab=readme-ov-file
+# https://gohugo.io/hugo-modules/configuration/#module-configuration-hugoversion
+[module]
+    [module.hugoVersion]
+        extended = true
+        min = "0.128.0"

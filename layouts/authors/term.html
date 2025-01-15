@@ -2,12 +2,7 @@
 
     <div class="island mb-4">
 
-        <div class="island-img">
-            {{ $img := .Resources.GetMatch .Params.cover.image }}
-            {{ if $img }}
-                <img src="{{ $img.RelPermalink }}" alt="">
-            {{ end }}
-        </div>
+        {{ partial "post-figure.html" . }}
 
         <header class="island-header relative">
             {{ $img := .Resources.GetMatch .Params.avatar.image }}
