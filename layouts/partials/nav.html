@@ -4,6 +4,7 @@
             
             <h1>
                 <a href="/">
+                    {{ site.Params.DateFormat }}
                     {{ $logo := resources.GetMatch site.Params.logo }}
                     {{ if $logo }}
                         <img 
@@ -36,14 +37,14 @@
                             </a>
                         {{ else }}
                             <a href="{{ .URL | relLangURL }}" class="menu-item">
-                                {{ with .Params.icon }}
+                                {{ if .Params.icon }}
                                     <i class="inline-block size-6">
-                                        {{- partial "icon" . }}
+                                        {{- partial "icon" .Params.icon }}
                                     </i>
+                                    <span class="sr-only">{{ .Name }}</span>
                                 {{ else }}
-                                    <span>{{ .Params.Icon }}</span>
+                                    <span>{{ .Name }}</span>
                                 {{ end }}
-                                <span class="sr-only">{{ .Name }}</span>
                             </a>
                         {{ end }}
                     </li>

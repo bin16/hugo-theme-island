@@ -1141,10 +1141,6 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
   }
-  .border-r-1 {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
