@@ -16,26 +16,34 @@ summaryLength = 128
     [[menus.main.params]]
       icon = "home"
   [[menus.main]]
+    identifier = "menu.docs"
+    name = "Documents"
+    pageRef = "/docs"
+    weight = 20
+    [[menus.main.params]]
+      icon = "question-mark-circle"
+  [[menus.main]]
     identifier = "menu.tags"
     name = "Tags"
     pageRef = "/tags"
-    weight = 20
+    weight = 30
     [[menus.main.params]]
       icon = "tag"
   [[menus.main]]
     identifier = "menu.archives"
     name = "Archives"
     pageRef = "/archives"
-    weight = 30
+    weight = 40
     [[menus.main.params]]
       icon = "archive-box"
   [[menus.main]]
     identifier = "menu.authors"
     name = "Authors"
     pageRef = "/authors"
-    weight = 40
+    weight = 50
     [[menus.main.params]]
       icon = "user-circle"
+
 
 [languages]
   [languages.en]
@@ -47,7 +55,7 @@ summaryLength = 128
     title = "ExampleSite"
     [languages.en.params]
       Logo = "demo-logo.png"
-      DateFormat = "Oct 15, 2006"
+      DateFormat = "Jan 02"
   [languages.zh-CN]
     disabled = false
     languageCode = "zh-CN"
@@ -57,7 +65,7 @@ summaryLength = 128
     weight = 10
     [languages.zh-CN.params]
       Logo = "demo-logo.png"
-      DateFormat = "2006-01-02"
+      DateFormat = "01-02"
 
 [pagination]
   disableAliases = false
@@ -74,7 +82,7 @@ summaryLength = 128
 
 [params]
   logo = "demo-logo.png"
-  mainSections = ["post", "doc"]
+  mainSections = ["docs"]
   DateFormat = "01/02"
 
 [markup]

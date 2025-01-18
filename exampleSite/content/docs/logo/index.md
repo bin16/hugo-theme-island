@@ -1,0 +1,24 @@
+---
+title: 'Logo'
+description: >
+    You can add optional logo in navigation page header.
+date: '2025-01-18T21:46:50+08:00'
+draft: false
+categores:
+    - docs
+tags:
+    - logo
+    - multilingual
+    - assets
+---
+
+Put your logo image into your site's `assets/dir`, and add filename to your hugo.toml's `[params]` section.
+
+```toml
+# hugo.toml
+[params]
+logo = "example-logo.png"
+```
+
+Of cource, you can add language-specific logo images by adding logo in language's params section.
+
