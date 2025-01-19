@@ -12,7 +12,7 @@
 @import "./code.css";
 
 .true-grid {
-    @apply p-2 md:p-0;
+    @apply px-2;
     @apply max-w-6xl mx-auto grid grid-cols-12 gap-4;
 }
 .true-grid-main {
@@ -34,8 +34,8 @@
 .pagination,
 .island,
 .button {
-    @apply rounded-sm;
     @apply border-t border-x-1 border-b-6;
+    @apply rounded-sm;
 }
 .island-head,
 .island-header {
@@ -59,16 +59,6 @@
     @apply p-4;
 }
 
-.page-info {
-    @apply rounded-none;
-}
-.page-item-prev {
-    @apply border-e-0 rounded-e-none;
-}
-.page-item-next {
-    @apply border-s-0 rounded-s-none;
-}
-
 .disabled {
     @apply pointer-events-none;
     @apply cursor-not-allowed;
@@ -77,10 +67,13 @@
 
 .avatar {
     @apply block;
-    @apply h-8 w-8 md:h-16 md:w-16;
     @apply border;
     @apply rounded-sm;
     @apply overflow-hidden;
+    @apply h-12 w-12 md:h-16 md:w-16;
+}
+.avatar-2x {
+    @apply h-20 w-20 md:h-32 md:w-32;
 }
 .avatar img {
     @apply block max-w-full;
@@ -89,13 +82,13 @@
     @apply flex flex-row-reverse;
 }
 .avatar-list-item {
-    @apply -ms-2;
+    @apply -ms-1 md:-ms-2;
 }
 .avatar-list-top-end {
-    @apply absolute -top-4 end-4 md:-top-8;
+    @apply absolute -top-6 md:-top-8 end-4;
 }
 .avatar-list-bottom-end {
-    @apply absolute -bottom-2 end-4 md:-bottom-4;
+    @apply absolute -bottom-4 md:-bottom-4 end-4;
 }
 
 /******************** COLOR ********************/

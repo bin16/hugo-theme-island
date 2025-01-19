@@ -8,9 +8,9 @@
             {{ $img := .Resources.GetMatch .Params.avatar.image }}
             {{ if $img }}
 
-            <ul class="avatar-list avatar-list-top-end">
+            <ul class="avatar-list absolute -top-24 md:-top-36 end-4">
                 <li class="avatar-list-item">
-                    <div class="avatar">
+                    <div class="avatar avatar-2x border-b-8">
                         <img 
                         src="{{ $img.RelPermalink }}" 
                         alt="{{ .LinkTitle }}"
