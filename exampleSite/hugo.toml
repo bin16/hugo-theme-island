@@ -69,7 +69,7 @@ summaryLength = 128
 
 [pagination]
   disableAliases = false
-  pagerSize = 2
+  pagerSize = 5
   path = "page"
 
 [permalinks]

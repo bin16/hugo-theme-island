@@ -1,5 +1,7 @@
 ---
 title: 'Icons'
+description: >
+    Using icons, and adding more icons.
 date: '2025-01-18T13:24:23+08:00'
 draft: false
 categories:
@@ -11,7 +13,7 @@ tags:
 
 ## Icons
 
-Icons can be used in [the main menu (menu in navigation bar)](/doc/menu-config/), or taxonomy pages.
+Icons can be used in [the main menu (menu in navigation bar)](/docs/menu-config/), or taxonomy pages.
 
 The built-in icons listed under `assets/icons` directory, are partial of [heroicons](https://heroicons.com/).
 

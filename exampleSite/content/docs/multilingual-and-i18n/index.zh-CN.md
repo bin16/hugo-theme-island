@@ -1,7 +1,7 @@
 ---
-title: 'Multilingual Mode and i18n'
+title: '多语言和国际化'
 description: >
-    Multilingual mode, i18n, date format, and translations.
+    多语言，国际化，日期格式，以及内容翻译。
 date: '2025-01-18T13:40:31+08:00'
 draft: false
 categories:
@@ -12,7 +12,7 @@ tags:
     - DateFormat
 ---
 
-## Multilingual
+## 多语言
 
 ```toml
 # hugo.toml
@@ -41,9 +41,9 @@ defaultContentLanguageInSubdir = false
     #   DateFormat = "2006-01-02"
 ```
 
-Reference: https://gohugo.io/content-management/multilingual/
+参考：https://gohugo.io/content-management/multilingual/
 
-### DateFormat
+### 日期格式 / DateFormat
 
 ```toml
 # hugo.toml
@@ -58,12 +58,12 @@ DateFormat = "2006-01-02" # [01]
             DateFormat = "Oct 15, 2006" # [02]
 ```
 
-[02] DateFormat in language params is looked up first, and if not exist, [01] `DateFormat` in site params is looked up next.
+主题将首先查找语言参数中的 [02] DateFormat，如果不存在，则接下来查找站点参数中的 [01] DateFormat。
 
-About date format layout, see: https://gohugo.io/functions/time/format/#layout-string
+关于日期的格式，查看：https://gohugo.io/functions/time/format/#layout-string
 
-### Add your own translations / Use translation table
+### 添加你自己的翻译 / 扩展翻译表
 
-Add your `SOME-LANGUAGE-CODE.yml`， in your site's `i18n/` directory, check [Use translation tables][hugo-i18n] to get more information.
+在你的站点的 `i18n/` 目录下面创建 `SOME-LANGUAGE-CODE.yml`，查看 [Use translation tables][hugo-i18n] 了解更多。
 
 [hugo-i18n]: https://gohugo.io/content-management/multilingual/#use-translation-tables "Use translation tables"
