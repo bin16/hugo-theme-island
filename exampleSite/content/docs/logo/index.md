@@ -4,6 +4,8 @@ description: >
     You can add optional logo in navigation page header.
 date: '2025-01-18T21:46:50+08:00'
 draft: false
+cover:
+    image: cover.webp
 categores:
     - docs
 tags:

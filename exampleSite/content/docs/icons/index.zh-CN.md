@@ -4,6 +4,8 @@ description: >
     增加更多图标，以及使用图标。
 date: '2025-01-18T13:24:23+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

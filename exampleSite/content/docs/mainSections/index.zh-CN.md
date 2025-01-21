@@ -4,6 +4,8 @@ description: >
     配置会展示在首页的主要内容。
 date: '2025-01-18T13:43:45+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

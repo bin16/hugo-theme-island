@@ -4,6 +4,8 @@ description: >
     Multilingual mode, i18n, date format, and translations.
 date: '2025-01-18T13:40:31+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

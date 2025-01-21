@@ -6,3 +6,4 @@ public/
 resources/
 .hugo_build.lock
 exampleSite/content/t/
+.DS_Store

@@ -4,6 +4,8 @@ description: >
     作者以及多作者相关的功能。
 date: '2025-01-18T21:34:09+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

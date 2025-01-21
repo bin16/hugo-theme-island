@@ -4,6 +4,8 @@ description: >
     你可以在导航栏中添加可选的logo。
 date: '2025-01-18T21:46:50+08:00'
 draft: false
+cover:
+    image: cover.webp
 categores:
     - docs
 tags:

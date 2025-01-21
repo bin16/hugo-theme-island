@@ -4,6 +4,8 @@ description: >
     封面图和作者头像。
 date: '2025-01-18T13:34:56+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

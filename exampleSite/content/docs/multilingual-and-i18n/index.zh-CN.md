@@ -4,6 +4,8 @@ description: >
     多语言，国际化，日期格式，以及内容翻译。
 date: '2025-01-18T13:40:31+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

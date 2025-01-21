@@ -4,6 +4,8 @@ description: >
     Contents on homepage.
 date: '2025-01-18T13:43:45+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:

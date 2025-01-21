@@ -4,6 +4,8 @@ description: >
     Using icons, and adding more icons.
 date: '2025-01-18T13:24:23+08:00'
 draft: false
+cover:
+    image: cover.webp
 categories:
     - docs
 tags:
