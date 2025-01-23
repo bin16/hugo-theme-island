@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* for Hugo css.TailwindCSS, relative path failed to read class names */
-/* @source "../../layouts/"; */
+@source "../../layouts";
 
 /* Hugo css.TailwindCSS requires this to read classnames. */
 /* @source "layouts"; */
