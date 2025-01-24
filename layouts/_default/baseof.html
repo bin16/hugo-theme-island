@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    {{- partial "head-meta.html" . }}
+    {{- partial "head-meta.html" . -}}
 
-    {{- if eq hugo.Environment "theme-dev" }}
+    {{- if eq hugo.Environment "theme-dev" -}}
         {{- $css := resources.Get "css/tailwind.css" | css.TailwindCSS }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-    {{- else }}
+    {{- else -}}
         {{- $css := resources.Get "css/main.css" }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-    {{- end }}
+    {{- end -}}
 
-    {{- block "head-append" . }}{{ end }}
+    {{- block "head-append" . -}}{{- end -}}
 
-    {{- partial "head-custom.html" . }}
+    {{- partial "head-custom.html" . -}}
 </head>
 <body>
-    {{- partial "nav.html" . }}
+    {{- partial "nav.html" . -}}
 
     <div class="true-grid">
         <main class="true-grid-main">
-            {{- block "main" . }}{{ end }}
+            {{- block "main" . -}}{{- end -}}
         </main>
         <aside class="true-grid-right">
-            {{- block "side" . }}{{ end }}
+            {{- block "side" . -}}{{- end -}}
         </aside>
     </div>
 
@@ -56,6 +56,6 @@
 
     </footer>
 
-    {{- partial "custom.html" . }}
+    {{- partial "custom.html" . -}}
 </body>
 </html>

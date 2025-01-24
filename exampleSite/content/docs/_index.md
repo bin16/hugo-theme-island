@@ -6,4 +6,5 @@ description: >
     Theme configuration documents.
 cover:
     image: docs-en.png
+icon: "document-text"
 ---

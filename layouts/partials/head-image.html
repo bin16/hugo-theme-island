@@ -1,46 +1,46 @@
-{{ if not .Params.cover.image }}
+{{- if not .Params.cover.image -}}
     {{/*  do nothing  */}}
 
-{{ else if strings.HasPrefix .Params.cover.image "http" }}
+{{- else if strings.HasPrefix .Params.cover.image "http" -}}
 
-    {{ $cover := resources.GetRemote .Params.cover.image }}
-    {{ if $cover }}
+    {{- $cover := resources.GetRemote .Params.cover.image -}}
+    {{- if $cover -}}
         <meta property="og:image" content="{{ $cover.Permalink }}" />
         <meta property="og:image:width" content="{{ $cover.Width }}" />
         <meta property="og:image:height" content="{{ $cover.Height }}" />
-        {{ if .Params.cover.alt }}
+        {{- if .Params.cover.alt -}}
             <meta property="og:image:alt" content="{{ .Params.cover.alt }}" />
-        {{ else }}
+        {{- else -}}
             <meta property="og:image:alt" content="{{ .Title }}" />
-        {{ end }}
-    {{ end }}
+        {{- end -}}
+    {{- end -}}
 
-{{ else }}
+{{- else -}}
 
-    {{ $cover := .Resources.GetMatch .Params.cover.image }}
-    {{ if $cover }}
+    {{- $cover := .Resources.GetMatch .Params.cover.image -}}
+    {{- if $cover -}}
         <meta property="og:image" content="{{ $cover.Permalink }}" />
         <meta property="og:image:width" content="{{ $cover.Width }}" />
         <meta property="og:image:height" content="{{ $cover.Height }}" />
-        {{ if .Params.cover.alt }}
+        {{- if .Params.cover.alt -}}
             <meta property="og:image:alt" content="{{ .Params.cover.alt }}" />
-        {{ else }}
+        {{- else -}}
             <meta property="og:image:alt" content="{{ .Title }}" />
-        {{ end }}
-    {{ else }}
+        {{- end -}}
+    {{- else -}}
 
-        {{ $globalCover := resources.GetMatch .Params.cover.image }}
-        {{ if $globalCover }}
+        {{- $globalCover := resources.GetMatch .Params.cover.image -}}
+        {{- if $globalCover -}}
             <meta property="og:image" content="{{ $globalCover.Permalink }}" />
             <meta property="og:image:width" content="{{ $globalCover.Width }}" />
             <meta property="og:image:height" content="{{ $globalCover.Height }}" />
-            {{ if .Params.cover.alt }}
+            {{- if .Params.cover.alt -}}
                 <meta property="og:image:alt" content="{{ .Params.cover.alt }}" />
-            {{ else }}
+            {{- else -}}
                 <meta property="og:image:alt" content="{{ .Title }}" />
-            {{ end }}
-        {{ end }}
+            {{- end -}}
+        {{- end -}}
 
-    {{ end }}
+    {{- end -}}
 
-{{ end }}
+{{- end -}}

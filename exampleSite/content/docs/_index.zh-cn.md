@@ -6,4 +6,5 @@ description: >
     主题配置说明文档
 cover:
     image: docs-zh.png
+icon: "document-text"
 ---

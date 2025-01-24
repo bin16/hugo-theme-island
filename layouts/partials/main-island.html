@@ -1,25 +1,13 @@
 <div class="island mb-4">
 
-    {{ partial "post-figure.html" . }}
+    {{- partial "post-figure.html" . -}}
 
     <header class="island-header relative">
         <h2 class="text-2xl flex items-center justify-start gap-2">
-            {{ if .Params.icon }}
-                {{- partial "icon" .Params.icon }}
-            {{ else if eq .Layout "archives" }}
-                {{- partial "icon" "archive-box" }}
-            {{ else if eq .Layout "authors" }}
-                {{- partial "icon" "user-circle"}}
-            {{ else if eq .Layout "tags" }}
-                {{- partial "icon" "tag"}}
-            {{ else if eq .Layout "about" }}
-                {{- partial "icon" "information-circle"}}
-            {{ else if eq .Layout "categories" }}
-                {{- partial "icon" "bookmark"}}
-            {{ else }}
-                <!-- {{ .Section }}; {{ .Layout }} -->
-            {{ end }}
-            <span>{{ .Title }}</span>
+            {{ if .Params.icon -}}
+                {{- partial "icon" .Params.icon -}}
+            {{- end -}}
+            <span>{{- .Title -}}</span>
         </h2>
     </header>
 

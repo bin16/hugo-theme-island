@@ -1,5 +1,6 @@
 {{ define "main" }}
-    {{ partial "post-full" . }}
+    {{- partial "post-full" . -}}
+    {{- partial "comments.html" . -}}
 {{ end }}
 
 {{ define "side" }}
