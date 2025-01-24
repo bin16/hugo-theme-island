@@ -184,3 +184,6 @@ body {
     @apply outline-1;
     @apply outline-slate-400 dark:outline-slate-500;
 }
+.icon {
+    @apply block size-5;
+}

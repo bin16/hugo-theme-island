@@ -1050,9 +1050,17 @@
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
   }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
   .size-6 {
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
+  }
+  .size-full {
+    width: 100%;
+    height: 100%;
   }
   .h-full {
     height: 100%;
@@ -1062,9 +1070,6 @@
   }
   .min-h-20 {
     min-height: calc(var(--spacing) * 20);
-  }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
   }
   .w-auto {
     width: auto;
@@ -1153,9 +1158,6 @@
   }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
-  }
-  .bg-yellow-100 {
-    background-color: var(--color-yellow-100);
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
@@ -1292,6 +1294,18 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:size-6 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 6);
+      height: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:size-8 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 8);
+      height: calc(var(--spacing) * 8);
     }
   }
   .md\:size-10 {
@@ -1797,6 +1811,11 @@ body {
   @media (prefers-color-scheme: dark) {
     outline-color: var(--color-slate-500);
   }
+}
+.icon {
+  display: block;
+  width: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 5);
 }
 @supports (-moz-orient: inline) {
   @layer base {

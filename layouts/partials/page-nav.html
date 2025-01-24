@@ -3,7 +3,9 @@
     <nav class="grid grid-cols-2 gap-4 mb-4">
         {{ with .Prev }}
             <a href="{{ .URL }}" class="button flex items-center justify-start gap-1">
-                {{ partial "icon" "chevron-left" }}
+                <i class="icon">
+                    {{ partial "icon" "chevron-left" }}
+                </i>
                 <span class="">{{ i18n "page.prev" }}</span>
             </a>
         {{ else }}
@@ -17,7 +19,9 @@
         {{ with .Next }}
             <a href="{{ .URL }}" class="button flex items-center justify-end">
                 <span class="">{{ "page.next" | i18n }}</span>
-                {{ partial "icon" "chevron-right" }}
+                <i class="icon">
+                    {{ partial "icon" "chevron-right" }}
+                </i>
             </a>
         {{ else }}
             {{/*  <span class="button disabled flex items-center justify-end">

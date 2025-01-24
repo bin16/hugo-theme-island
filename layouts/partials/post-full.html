@@ -14,46 +14,49 @@
         </div>
 
         <footer class="island-footer flex flex-wrap gap-2 justify-between">
-            {{- partial "post-date.html" . }}
-            {{- partial "post-tags.html" . }}
+            {{- partial "post-date.html" . -}}
+            {{- partial "post-tags.html" . -}}
         </footer>
     </div>
 
     <div class="button-group gap-4 mb-4 flex items-stretch">
-        {{ with .Next }}
-        <a 
-            href="{{ .RelPermalink }}"
-            class="button flex-1 flex gap-2 items-center justify-start">
-                {{ partial "icon" "chevron-left" }}
+        {{- with .Next -}}
+            <a href="{{ .RelPermalink }}"
+                class="button flex-1 flex gap-2 items-center justify-start">
+                <i class="icon">
+                    {{- partial "icon" "chevron-left" -}}
+                </i>
 
                 <span>{{ .Title }}</span>
             </a>
-        {{ else }}
+        {{- else -}}
             {{/*  <span class="button disabled flex flex-1 gap-2 items-center justify-start">
                 {{ partial "icon" "chevron-left" }}
 
                 <span>&nbsp;</span>
             </span>  */}}
             <span class="button flex-1 disabled"></span>
-        {{ end }}
+        {{- end -}}
 
-        {{ with .Prev }}
+        {{- with .Prev -}}
             <a 
                 href="{{ .RelPermalink }}"
                 class="button flex-1 flex gap-2 items-center justify-end">
 
                 <span>{{ .Title }}</span>
 
-                {{ partial "icon" "chevron-right" }}
+                <i class="icon">
+                    {{ partial "icon" "chevron-right" }}
+                </i>
             </a>
-        {{ else }}
+        {{- else -}}
             {{/*  <span class="button disabled flex-1 flex gap-2 items-center justify-end">
                 <span>&nbsp;</span>
 
                 {{ partial "icon" "chevron-right" }}
             </span>  */}}
             <span class="button flex-1 disabled"></span>
-        {{ end }}
+        {{- end -}}
     </div>
 
 </article>

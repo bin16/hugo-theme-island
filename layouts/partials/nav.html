@@ -26,7 +26,7 @@
                         {{ if $currentPage.IsMenuCurrent .Menu . }}
                             <a href="{{ .URL | relLangURL }}" class="menu-item active">
                                 {{ with .Params.icon }}
-                                    <i class="inline-block size-6">
+                                    <i class="icon">
                                         {{- partial "icon" . }}
                                     </i>
                                 {{ else }}
@@ -37,7 +37,7 @@
                         {{ else }}
                             <a href="{{ .URL | relLangURL }}" class="menu-item">
                                 {{ if .Params.icon }}
-                                    <i class="inline-block size-6">
+                                    <i class="icon">
                                         {{- partial "icon" .Params.icon }}
                                     </i>
                                     <span class="sr-only">{{ .Name }}</span>
