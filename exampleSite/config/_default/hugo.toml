@@ -7,43 +7,42 @@ themesdir = "../.."
 
 summaryLength = 128
 
-[menus]
-  [[menus.main]]
-    identifier = "menu.home"
-    name = "Home"
-    pageRef = "/"
-    weight = 10
-    [[menus.main.params]]
-      icon = "home"
-  [[menus.main]]
-    identifier = "menu.docs"
-    name = "Documents"
-    pageRef = "/docs"
-    weight = 20
-    [[menus.main.params]]
-      icon = "question-mark-circle"
-  [[menus.main]]
-    identifier = "menu.tags"
-    name = "Tags"
-    pageRef = "/tags"
-    weight = 30
-    [[menus.main.params]]
-      icon = "tag"
-  [[menus.main]]
-    identifier = "menu.archives"
-    name = "Archives"
-    pageRef = "/archives"
-    weight = 40
-    [[menus.main.params]]
-      icon = "archive-box"
-  [[menus.main]]
-    identifier = "menu.authors"
-    name = "Authors"
-    pageRef = "/authors"
-    weight = 50
-    [[menus.main.params]]
-      icon = "user-circle"
-
+# [menus]
+#   [[menus.main]]
+#     identifier = "menu.home"
+#     name = "Home"
+#     pageRef = "/"
+#     weight = 10
+#     [[menus.main.params]]
+#       icon = "home"
+#   [[menus.main]]
+#     identifier = "menu.docs"
+#     name = "Documents"
+#     pageRef = "/docs"
+#     weight = 20
+#     [[menus.main.params]]
+#       icon = "question-mark-circle"
+#   [[menus.main]]
+#     identifier = "menu.tags"
+#     name = "Tags"
+#     pageRef = "/tags"
+#     weight = 30
+#     [[menus.main.params]]
+#       icon = "tag"
+#   [[menus.main]]
+#     identifier = "menu.archives"
+#     name = "Archives"
+#     pageRef = "/archives"
+#     weight = 40
+#     [[menus.main.params]]
+#       icon = "archive-box"
+#   [[menus.main]]
+#     identifier = "menu.authors"
+#     name = "Authors"
+#     pageRef = "/authors"
+#     weight = 50
+#     [[menus.main.params]]
+#       icon = "user-circle"
 
 [languages]
   [languages.en]

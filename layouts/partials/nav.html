@@ -23,29 +23,31 @@
                 {{ $currentPage := . }}
                 {{ range site.Menus.main }}
                     <li>
+                        {{ $itemActive := false }}
                         {{ if $currentPage.IsMenuCurrent .Menu . }}
-                            <a href="{{ .URL | relLangURL }}" class="menu-item active">
-                                {{ with .Params.icon }}
-                                    <i class="icon">
-                                        {{- partial "icon" . }}
-                                    </i>
-                                {{ else }}
-                                    <span>{{ .Params.Icon }}</span>
-                                {{ end }}
-                                <span class="sr-only">{{ .Name }}</span>
-                            </a>
-                        {{ else }}
-                            <a href="{{ .URL | relLangURL }}" class="menu-item">
-                                {{ if .Params.icon }}
-                                    <i class="icon">
-                                        {{- partial "icon" .Params.icon }}
-                                    </i>
-                                    <span class="sr-only">{{ .Name }}</span>
-                                {{ else }}
-                                    <span>{{ .Name }}</span>
-                                {{ end }}
-                            </a>
+                            {{ $itemActive = true }}
+                        {{ else if $currentPage.HasMenuCurrent .Menu . }}
+                            {{ $itemActive = true }}
                         {{ end }}
+
+                        <a href="{{ .URL | relLangURL }}" 
+                            {{ with $itemActive }}
+                                class="menu-item active"
+                            {{ else }}
+                                class="menu-item"
+                            {{ end }}
+                            {{ with $itemActive }}aria-current="true"{{ end }}
+                            class="menu-item active">
+                            {{ with .Params.icon }}
+                                <i class="icon">
+                                    {{- partial "icon" . -}}
+                                </i>
+                            {{ else }}
+                                <span>{{ .Params.Icon }}</span>
+                            {{ end }}
+                            <span class="sr-only">{{ .Name }}</span>
+                        </a>
+                        
                     </li>
                 {{ end }}
             </ul>
