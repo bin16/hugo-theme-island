@@ -6,8 +6,8 @@
     </i>
 
     <span class="ms-1">
-        {{- if site.Params.DateFormat -}}
-            {{ .Date.Format site.Params.DateFormat }}
+        {{- if site.Params.dateFormat -}}
+            {{ .Date.Format site.Params.dateFormat }}
         {{- else -}}
             {{ .Date.Format $defaultDateFormat }}
         {{- end -}}

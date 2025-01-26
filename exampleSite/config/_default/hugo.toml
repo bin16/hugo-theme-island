@@ -53,8 +53,9 @@ summaryLength = 128
     weight = 0
     title = "ExampleSite"
     [languages.en.params]
-      Logo = "demo-logo.png"
-      DateFormat = "Jan 02"
+      logo = "demo-logo.png"
+      dateFormat = "Jan 02"
+      description = "demo site of hugo-theme-island"
   [languages.zh-CN]
     disabled = false
     languageCode = "zh-CN"
@@ -63,8 +64,9 @@ summaryLength = 128
     title = "示例网站"
     weight = 10
     [languages.zh-CN.params]
-      Logo = "demo-logo.png"
-      DateFormat = "01-02"
+      logo = "demo-logo.png"
+      dateFormat = "01-02"
+      description = "hugo-theme-island 主题示例以及文档"
 
 [pagination]
   disableAliases = false
@@ -82,7 +84,8 @@ summaryLength = 128
 [params]
   logo = "demo-logo.png"
   mainSections = ["docs"]
-  DateFormat = "01/02"
+  dateFormat = "01/02"
+  description = "xxx"
 
 [markup]
   [markup.goldmark]
