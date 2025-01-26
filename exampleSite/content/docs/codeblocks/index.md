@@ -2,6 +2,7 @@
 date: '2025-01-10T10:30:13+08:00'
 draft: false
 title: 'Codeblocks'
+section: docs
 tags:
     - demo
     - markup/codeblock
