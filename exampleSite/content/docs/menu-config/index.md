@@ -19,6 +19,7 @@ The menu in navigation is managed in site configuration, you can check [Define i
 
 ```toml
 # hugo.toml
+# https://gohugo.io/getting-started/configuration/#configuration-file
 
 [menus]
   [[menus.main]]
@@ -27,21 +28,24 @@ The menu in navigation is managed in site configuration, you can check [Define i
     pageRef = "/"
     weight = 10
     [[menus.main.params]]
-      icon = "home"
+      icon = "home" # assets/icons/home.svg
+  # menu item with absolute path
   [[menus.main]]
     identifier = "menu.tags"
     name = "Tags"
     pageRef = "/tags"
     weight = 20
     [[menus.main.params]]
-      icon = "tag"
+      icon = "tag" # assets/icons/tag.svg
+  # menu item with full url
   [[menus.main]]
-    identifier = "menu.archives"
-    name = "Archives"
-    pageRef = "/archives"
+    identifier = "menu.repo"
+    name = "Github Repo"
+    url = "https://github.com/bin16/hugo-theme-island"
     weight = 30
     [[menus.main.params]]
-      icon = "archive-box"
+      target = "_blank" # open page in new tab
+      icon = "bs/github" # assets/icons/bs/github.svg
 ```
 
 ### Icons

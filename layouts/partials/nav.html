@@ -36,6 +36,7 @@
                             {{ else }}
                                 class="menu-item"
                             {{ end }}
+                            {{ with .Params.target }}target="{{ . }}"{{ end }}
                             {{ with $itemActive }}aria-current="true"{{ end }}
                             class="menu-item active">
                             {{ with .Params.icon }}
