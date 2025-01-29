@@ -1245,6 +1245,11 @@
       }
     }
   }
+  .md\:end-auto {
+    @media (width >= 48rem) {
+      inset-inline-end: auto;
+    }
+  }
   .md\:-top-36 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * -36);
