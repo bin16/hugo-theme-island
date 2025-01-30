@@ -1,23 +1,31 @@
 <nav class="island mb-4 md:mb-6 pt-4 md:pt-0 sticky top-0 z-20">
     <div class="true-grid">
         <div class="true-grid-main flex flex-col gap-4 md:flex-row items-center justify-between">
-            
-            <h1>
-                <a href="/">
-                    {{ $logo := resources.GetMatch site.Params.logo }}
-                    {{ if $logo }}
-                        <img 
-                            width="{{ $logo.Width }}"
-                            height="{{ $logo.Height }}"
-                            src="{{ $logo.RelPermalink }}" 
-                            alt="{{ site.Title }}" 
-                            class="site-icon inline-block max-h-8 me-2 w-auto">
-                        <span class="site-title">{{ site.Title }}</span>
-                    {{ else }}
-                        <span class="site-title">{{ site.Title }}</span>
-                    {{ end }}
-                </a>
-            </h1>
+
+            <div class="flex items-center">
+                <h1 class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        {{ $logo := resources.GetMatch site.Params.logo }}
+                        {{ if $logo }}
+                            <img 
+                                width="{{ $logo.Width }}"
+                                height="{{ $logo.Height }}"
+                                src="{{ $logo.RelPermalink }}" 
+                                alt="{{ site.Title }}" 
+                                class="site-icon inline-block max-h-8 me-2 w-auto">
+                            <span class="site-title">{{ site.Title }}</span>
+                        {{ else }}
+                            <span class="site-title">{{ site.Title }}</span>
+                        {{ end }}
+                    </a>
+                </h1>
+                <button class="hidden dark:inline-block size-6 ms-1 cursor-pointer theme-item js-sun">
+                    {{- partial "icon" "sun" -}}
+                </button>
+                <button class="inline-block dark:hidden size-6 ms-1 cursor-pointer theme-item js-moon">
+                    {{- partial "icon" "moon" -}}
+                </button>
+            </div>
 
             <ul class="nav-menu flex gap-2 p-0" id="nav-content">
                 {{ $currentPage := . }}

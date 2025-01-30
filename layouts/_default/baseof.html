@@ -26,6 +26,16 @@
             {{- block "main" . -}}{{- end -}}
         </main>
         <aside class="true-grid-right">
+
+            <button class="button w-full mb-4">
+                <a href="javascript:;" class="hidden dark:inline-block js-sun">
+                    {{- partial "icon" "sun" -}}
+                </a>
+                <a href="javascript:;" class="inline-block dark:hidden js-moon">
+                    {{- partial "icon" "moon" -}}
+                </a>
+            </button>
+
             {{- block "side" . -}}{{- end -}}
 
             <a 
@@ -61,6 +71,21 @@
         </div>
 
     </footer>
+
+    <script>
+    (function() {
+        document.querySelectorAll(".js-sun").forEach(el => {
+            el.addEventListener("click", () => {
+                document.body.setAttribute("data-theme", "light");
+            });
+        });
+        document.querySelectorAll(".js-moon").forEach(el => {
+            el.addEventListener("click", () => {
+                document.body.setAttribute("data-theme", "dark");
+            });
+        });
+    })()
+    </script>
 
     {{- partial "custom.html" . -}}
 </body>

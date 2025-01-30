@@ -8,6 +8,8 @@
 
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* chroma highlights */
 @import "./code.css";
 
@@ -90,6 +92,11 @@
 .avatar-list-bottom-end {
     @apply absolute -bottom-4 md:-bottom-4 end-4;
 }
+.theme-item {
+    @apply size-7;
+    @apply p-1;
+    @apply rounded-full;
+}
 
 /******************** COLOR ********************/
 
@@ -102,6 +109,7 @@
 .button:not(.disabled),
 .menu-item:not(.active),
 .page-item:not(.active),
+.theme-item,
 .action {
     @apply transition-colors;
     @apply hover:bg-gray-200;
@@ -144,7 +152,7 @@
     @apply dark:bg-red-900 dark:text-red-300 dark:border-red-950;
 }
 
-html,
+body,
 .text-default {
     @apply text-gray-800;
     @apply dark:text-gray-200;
