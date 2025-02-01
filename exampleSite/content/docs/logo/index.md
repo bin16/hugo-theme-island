@@ -12,6 +12,8 @@ tags:
     - logo
     - multilingual
     - assets
+authors:
+    - alice
 ---
 
 Put your logo image into your site's `assets/` directory, and add filename to your hugo.toml's `[params]` section.

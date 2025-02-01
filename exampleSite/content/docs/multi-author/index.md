@@ -14,6 +14,8 @@ tags:
     - taxonomies
     - avatar
     - taxonomies
+authors:
+    - bob
 ---
 
 ## Enable multi-author feature

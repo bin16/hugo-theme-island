@@ -12,11 +12,11 @@
 
 <!-- Description -->
 {{- if .IsHome -}}
-    <meta name="description" content="{{ strings.TrimSpace site.Params.description }}" />
-    <meta property="og:description" content="{{ strings.TrimSpace site.Params.description }}" />
+    <meta name="description" content="{{ site.Params.description }}" />
+    <meta property="og:description" content="{{ site.Params.description }}" />
 {{- else if .Params.description -}}
-    <meta name="description" content="{{ strings.TrimSpace .Params.description }}" />
-    <meta property="og:description" content="{{ strings.TrimSpace .Params.description }}" />
+    <meta name="description" content="{{ .Params.description }}" />
+    <meta property="og:description" content="{{ .Params.description }}" />
 {{- else -}}
     <meta name="description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />
     <meta property="og:description" content="{{ .Summary | plainify | strings.Truncate site.Params.summaryLength }}" />

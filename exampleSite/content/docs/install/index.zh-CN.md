@@ -13,6 +13,8 @@ tags:
     - Installation
 cover:
     image: pattern.webp
+authors:
+    - alice
 ---
 
 ## 安装主题

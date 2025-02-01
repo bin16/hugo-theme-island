@@ -11,6 +11,8 @@ categories:
 tags:
     - homepage
     - mainSections
+authors:
+    - bob
 ---
 
 Only [main sections][mainSections] are displayed on home page, please check [Hugo's document, mainSections][mainSections] to get more information.

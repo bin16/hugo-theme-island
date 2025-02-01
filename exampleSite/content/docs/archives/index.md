@@ -8,6 +8,8 @@ tags:
     - archives
 categories:
     - docs
+authors:
+    - bob
 ---
 
 You will need to create `content/archives/_index.md` to enable the archives page.

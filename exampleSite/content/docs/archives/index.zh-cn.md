@@ -8,6 +8,8 @@ tags:
     - archives
 categories:
     - docs
+authors:
+    - bob
 ---
 
 你需要创建 `content/archives/_index.md` 来启用归档页面。

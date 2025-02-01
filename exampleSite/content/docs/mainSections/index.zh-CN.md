@@ -11,6 +11,8 @@ categories:
 tags:
     - homepage
     - mainSections
+authors:
+    - bob
 ---
 
 只有 [main sections][mainSections] 内容会展示在主页, 查看 [mainSections][mainSections] 了解更多。

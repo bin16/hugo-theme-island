@@ -14,6 +14,8 @@ tags:
     - taxonomies
     - avatar
     - taxonomies
+authors:
+    - bob
 ---
 
 ## 启用多作者功能
