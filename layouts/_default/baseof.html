@@ -109,20 +109,18 @@
             }
         }
 
-        (() => {
-            const theme = preferColor() || systemColor();
-            if (theme === LIGHT || theme === DARK) {
-                document.body.setAttribute("data-theme", theme);
-            }
+        const theme = preferColor() || systemColor();
+        if (theme === LIGHT || theme === DARK) {
+            document.body.setAttribute("data-theme", theme);
+        }
 
-            systemDarkMode.addEventListener("change", event => {
-                if (event.matches) {
-                    setDarkMode();
-                } else {
-                    setLightMode();
-                }
-            });
-        })();
+        systemDarkMode.addEventListener("change", event => {
+            if (event.matches) {
+                setDarkMode();
+            } else {
+                setLightMode();
+            }
+        });
 
         document.querySelectorAll(".js-sun").forEach(el => {
             el.addEventListener("click", () => {

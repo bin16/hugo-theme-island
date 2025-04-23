@@ -1,10 +1,12 @@
 {
   "name": "hugo-theme-island",
-  "version": "0.0.1",
+  "version": "0.6.0",
   "scripts": {
     "watch-css": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css -w",
-    "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css",
-    "dev": "hugo server -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender -D",
+    "build-css": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/main.css",
+    "build": "hugo --theme hugo-theme-island --themesDir ../.. -s exampleSite --gc --minify",
+    "build-netlify": "hugo --theme repo --themesDir ../.. -s exampleSite --gc --minify", 
+    "dev": "hugo server -D -e theme-dev --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender",
     "hugo": "hugo server -D --theme hugo-theme-island --themesDir ../.. -s ./exampleSite --disableFastRender"
   },
   "keywords": [],
