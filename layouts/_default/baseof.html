@@ -64,16 +64,78 @@
 
     <script>
     (function() {
+        const THEME = "hugo-theme-island:color-scheme";
+        const DARK = "dark";
+        const LIGHT = "light";
+
+        const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+        const systemColor = () => systemDarkMode.matches ? DARK : LIGHT;
+        const preferColor = () => localStorage.getItem(THEME);
+
+        const setDarkMode = (manual = false) => {
+            if (manual) {
+                document.body.setAttribute("data-theme", DARK);
+                console.log(preferColor(), systemColor());
+                if (preferColor() === LIGHT) {
+                    localStorage.removeItem(THEME);
+                } else {
+                    localStorage.setItem(THEME, DARK);
+                }
+
+                return;
+            }
+
+            if (preferColor() !== LIGHT) {
+                document.body.setAttribute("data-theme", DARK);
+                return;
+            }
+        }
+
+        const setLightMode = (manual = false) => {
+            if (manual) {
+                document.body.setAttribute("data-theme", LIGHT);
+                if (preferColor() === DARK) {
+                    localStorage.removeItem(THEME);
+                } else {
+                    localStorage.setItem(THEME, LIGHT);
+                }
+
+                return;
+            }
+
+            if (preferColor() !== DARK) {
+                document.body.setAttribute("data-theme", LIGHT);
+                return;
+            }
+        }
+
+        (() => {
+            const theme = preferColor() || systemColor();
+            if (theme === LIGHT || theme === DARK) {
+                document.body.setAttribute("data-theme", theme);
+            }
+
+            systemDarkMode.addEventListener("change", event => {
+                if (event.matches) {
+                    setDarkMode();
+                } else {
+                    setLightMode();
+                }
+            });
+        })();
+
         document.querySelectorAll(".js-sun").forEach(el => {
             el.addEventListener("click", () => {
-                document.body.setAttribute("data-theme", "light");
+                setLightMode(true);
             });
         });
+    
         document.querySelectorAll(".js-moon").forEach(el => {
             el.addEventListener("click", () => {
-                document.body.setAttribute("data-theme", "dark");
+                setDarkMode(true);
             });
         });
+
     })()
     </script>
 
