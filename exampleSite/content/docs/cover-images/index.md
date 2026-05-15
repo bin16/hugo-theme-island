@@ -21,8 +21,10 @@ tags:
 title: "your-post-title"
 # ...
 cover:
-    image: example.jpg
+    image: example.jpg # or URL
     alt: xxx # Optional
+    width: 750 # Optional
+    height: 500 # Optional
 ---
 ```
 
