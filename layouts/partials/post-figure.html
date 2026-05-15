@@ -1,5 +1,5 @@
 {{- if not .Params.cover.image -}}
-    <figure class="island-img min-h-20 relative ">
+    <figure class="island-img min-h-20 relative border-b">
         <a 
             href="{{ .RelPermalink }}"
             title="{{ .Title }}"
@@ -9,7 +9,7 @@
 
 {{- else if or (strings.HasPrefix .Params.cover.image "http://") (strings.HasPrefix .Params.cover.image "https://") -}}
 
-    <figure class="island-img relative">
+    <figure class="island-img relative border-b">
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="block">
             <img 
                 src="{{ .Params.cover.image }}" 
@@ -37,7 +37,7 @@
             {{- $imgHeight = $cover.Height -}}
         {{- end -}}
 
-        <figure class="island-img relative">
+        <figure class="island-img relative border-b">
             <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="block">
                 <img 
                     src="{{ $cover.RelPermalink }}" 
