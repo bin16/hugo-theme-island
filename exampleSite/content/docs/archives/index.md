@@ -27,7 +27,7 @@ cover:
 ---
 ```
 
-Or, if your file are not at `content/archives/`, you can add `layout: archives` in your markdown's frontmatter.
+Or, if your file are not at `content/archives/`, you can add `type: archives` in your markdown's frontmatter.
 
 ```
 ---
@@ -37,6 +37,6 @@ draft: false
 icon: archive-box
 cover:
     image: cover.jpg
-layout: archives
+type: archives
 ---
 ```

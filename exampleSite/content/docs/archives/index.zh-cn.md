@@ -27,7 +27,7 @@ cover:
 ---
 ```
 
-如果你的 `_index.md` 不在 `content/archives/` 目录下面，那你可以给你的 `_index.md` 的 frontmatter 添加 `layout: archives` 来启用这一特性。
+如果你的 `_index.md` 不在 `content/archives/` 目录下面，那你可以给你的 `_index.md` 的 frontmatter 添加 `type: archives` 来启用这一特性。
 
 ```
 ---
@@ -37,6 +37,6 @@ draft: false
 icon: archive-box
 cover:
     image: cover.jpg
-layout: archives
+type: archives
 ---
 ```
