@@ -5,7 +5,7 @@ description: >
 date: '2025-01-18T13:40:31+08:00'
 draft: false
 cover:
-    image: cover.webp
+    image: dots-purple.png
 categories:
     - docs
 tags:
@@ -25,8 +25,8 @@ defaultContentLanguageInSubdir = false
 [languages]
   [languages.en]
     disabled = false
-    languageCode = "en"
-    languageName = "English"
+    locale = "en"
+    label = "English"
     weight = 0
     title = "ExampleSite"
     [languages.en.params]
@@ -34,8 +34,8 @@ defaultContentLanguageInSubdir = false
       DateFormat = "Oct 15, 2006"
   [languages.zh-CN]
     disabled = false
-    languageCode = "zh-CN"
-    languageName = "中文"
+    locale = "zh-CN"
+    label = "中文"
     title = "示例网站"
     weight = 10
     [languages.zh-CN.params]

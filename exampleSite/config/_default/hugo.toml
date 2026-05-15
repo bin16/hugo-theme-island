@@ -1,5 +1,5 @@
 baseURL = "https://hugo-theme-island.netlify.app/"
-languageCode = "en-us"
+locale = "en-us"
 title = "ExampleSite"
 description = "demo site of hugo-theme-island"
 theme = "hugo-theme-island"
@@ -47,9 +47,9 @@ summaryLength = 128
 [languages]
   [languages.en]
     disabled = false
-    languageCode = "en"
+    locale = "en"
     # languageDirection = ""
-    languageName = "English"
+    label = "English"
     weight = 0
     title = "ExampleSite"
     [languages.en.params]
@@ -58,9 +58,9 @@ summaryLength = 128
       description = "demo site of hugo-theme-island"
   [languages.zh-CN]
     disabled = false
-    languageCode = "zh-CN"
+    locale = "zh-CN"
     # languageDirection = ""
-    languageName = "中文"
+    label = "中文"
     title = "示例网站"
     weight = 10
     [languages.zh-CN.params]

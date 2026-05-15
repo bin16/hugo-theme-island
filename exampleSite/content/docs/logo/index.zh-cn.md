@@ -5,7 +5,7 @@ description: >
 date: '2025-01-18T21:46:50+08:00'
 draft: false
 cover:
-    image: cover.webp
+    image: cover-x-2.png
 categores:
     - docs
 tags:
@@ -30,8 +30,8 @@ logo = "example-logo.png"
 # hugo.toml
 [languages]
   [languages.zh-cn]
-    languageCode = "zh-cn"
-    languageName = "中文"
+    locale = "zh-cn"
+    label = "中文"
     title = "示例网站"
     [languages.zh-cn.params]
       Logo = "example-logo.png" # 在这里添加你的 logo

@@ -5,7 +5,7 @@ description: >
 date: '2025-01-18T21:46:50+08:00'
 draft: false
 cover:
-    image: cover.webp
+    image: cover-x-2.png
 categores:
     - docs
 tags:
@@ -30,8 +30,8 @@ Of cource, you can add language-specific logo images by adding logo in [language
 # hugo.toml
 [languages]
   [languages.en]
-    languageCode = "en"
-    languageName = "English"
+    locale = "en"
+    label = "English"
     title = "ExampleSite"
     [languages.en.params]
       Logo = "example-logo.png" # add your logo here.

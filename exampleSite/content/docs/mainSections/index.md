@@ -5,7 +5,7 @@ description: >
 date: '2025-01-18T13:43:45+08:00'
 draft: false
 cover:
-    image: cover.webp
+    image: cover-x-5.png
 categories:
     - docs
 tags:

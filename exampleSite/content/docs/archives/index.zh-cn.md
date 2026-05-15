@@ -4,6 +4,8 @@ description: >
     如何启用归档页面。
 date: '2025-01-26T20:44:58+08:00'
 draft: false
+cover:
+    image: cover-x-8.png
 tags:
     - archives
 categories:

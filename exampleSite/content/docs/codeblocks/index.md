@@ -3,6 +3,8 @@ date: '2025-01-10T10:30:13+08:00'
 draft: false
 title: 'Codeblocks'
 section: docs
+cover:
+    image: cover-x-5.png
 tags:
     - demo
     - markup/codeblock
@@ -10,8 +12,6 @@ authors:
     - alice
 categories:
     - demo
-cover:
-    image: pattern.png
 ---
 
 ## Markdown Code Fence

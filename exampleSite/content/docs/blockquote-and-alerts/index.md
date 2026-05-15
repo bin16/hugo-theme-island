@@ -2,14 +2,14 @@
 date: '2025-01-09T22:01:52+08:00'
 draft: false
 title: 'Blockquote and Alerts'
+cover:
+    image: cover-x-7.png
 tags:
     - demo
     - markup/blockquote
     - markup/alert
 authors:
     - alice
-cover:
-    image: pattern.png
 ---
 
 ## Blockquote

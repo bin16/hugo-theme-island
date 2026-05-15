@@ -12,7 +12,7 @@ tags:
     - git
     - Installation
 cover:
-    image: pattern.webp
+    image: cover-x-3.png
 authors:
     - alice
 ---
