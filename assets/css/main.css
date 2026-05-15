@@ -999,6 +999,9 @@
   .cursor-pointer {
     cursor: pointer;
   }
+  .resize {
+    resize: both;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -1040,6 +1043,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
   }
   .border-e {
     border-inline-end-style: var(--tw-border-style);
@@ -1463,8 +1469,7 @@
   border-bottom-width: 1px;
 }
 .island-img, .island-image {
-  border-bottom-style: var(--tw-border-style);
-  border-bottom-width: 1px;
+  object-fit: contain;
 }
 .island-body {
   padding: calc(var(--spacing) * 4);

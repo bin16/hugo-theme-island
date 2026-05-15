@@ -46,7 +46,7 @@
 }
 .island-img,
 .island-image {
-    @apply border-b;
+    @apply object-contain;
 }
 .island-body {
     @apply p-4;

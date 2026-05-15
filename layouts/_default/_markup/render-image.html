@@ -1,50 +1,46 @@
+{{- $imgSrc := .Destination -}}
+{{- $imgAlt := .PlainText -}}
+{{- $imgWidth := "" }}
+{{- $imgHeight := "" }}
+{{- $imgTitle := .Title }}
+{{- if not (and (strings.HasPrefix .Destination "http://") (strings.HasPrefix .Destination "https://")) -}}
+    {{- $img := .Page.Resources.Get .Destination -}}
 
-<div class="flex flex-col items-center">
-    <figure class="island mx-auto w-auto not-prose overflow-hidden">
+    {{- if reflect.IsImageResource $img -}}
+        {{- $imgSrc = $img.RelPermalink -}}
+        {{- $imgWidth = $img.Width -}}
+        {{- $imgHeight = $img.Height -}}
+    {{- else if $img -}}
+        {{- $imgSrc = $img.RelPermalink -}}
+    {{- end -}}
+{{- end -}}
 
-
-        {{ if strings.HasPrefix .Destination "http:" }}
-
+{{- if .IsBlock -}}
+    <div class="flex flex-col items-center">
+        <figure class="island mx-auto w-auto not-prose overflow-hidden">
             <img 
-                class="island-img"
-                src="{{ .Destination }}"
+                class="island-img mx-auto"
+                src="{{ $imgSrc }}"
                 loading="lazy"
-                alt="{{ if .PlainText }}{{ . }}{{ end }}"
-                title="{{ if .Title }}{{ . }}{{ end }}"
+                alt="{{ $imgAlt }}"
+                {{ with $imgWidth }}width="{{ $imgWidth }}"{{ end }}
+                {{ with $imgHeight }}height="{{ $imgHeight }}"{{ end }}
             />
-
-        {{ else if strings.HasPrefix .Destination "https:" }}
-
-            <img 
-                class="island-img"
-                src="{{ .Destination }}"
-                loading="lazy"
-                alt="{{ if .PlainText }}{{ . }}{{ end }}"
-                title="{{ if .Title }}{{ . }}{{ end }}"
-            />
-
-        {{ else }}
         
-            {{ $img := .Page.Resources.GetMatch .Destination }}
-            {{ if $img }}
-
-                <img 
-                    class="island-img"
-                    src="{{ $img.RelPermalink }}"
-                    width="{{ $img.Width }}"
-                    height="{{ $img.Height }}"
-                    loading="lazy"
-                    alt="{{ if .PlainText }}{{ . }}{{ end }}"
-                    title="{{ if .Title }}{{ . }}{{ end }}"
-                />
-
-            {{ end }}
-        {{ end }}
-    
-        {{- with .Title }}
-            <figcaption class="island-body text-sm text-muted">
-                {{ . }}
-            </figcaption>
-        {{ end -}}
-    </figure>
-</div>
+            {{- with .Title }}
+                <figcaption class="island-body text-sm text-muted border-t">
+                    {{ . }}
+                </figcaption>
+            {{ end -}}
+        </figure>
+    </div>
+{{- else -}}
+    <img 
+        class="inline-block rounded-sm"
+        src="{{ $imgSrc }}"
+        loading="lazy"
+        alt="{{ $imgAlt }}"
+        {{ with $imgWidth }}width="{{ $imgWidth }}"{{ end }}
+        {{ with $imgHeight }}height="{{ $imgHeight }}"{{ end }}
+    />
+{{- end -}}
