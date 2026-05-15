@@ -14,10 +14,10 @@
                     <a 
                         class="flex items-center justify-between p-4 action"
                         href="{{ .RelPermalink }}" 
-                        hreflang="{{ .Language.LanguageCode }}">
+                        hreflang="{{ .Language.Locale }}">
                         <span>{{ .Title }}</span>
                         <span class="text-muted">
-                            ({{ .Language.LanguageName }})
+                            ({{ .Language.Label }})
                         </span>
                     </a>
                 </li>

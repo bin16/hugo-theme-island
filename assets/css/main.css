@@ -1056,6 +1056,9 @@
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
