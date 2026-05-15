@@ -40,6 +40,10 @@ Cras volutpat, odio at mattis sodales, est risus condimentum purus, et cursus au
 ![demo image 256x128](./demo_b_4x.png)
 ```
 
+## 使用绝对路径的图像
+
+![demo image 256x128](/demo_e_8x.png)
+
 ## 更多示例
 
 Pellentesque sit amet ultrices nisl. Vivamus id dolor eget ligula viverra iaculis ac quis arcu. Sed viverra luctus hendrerit.

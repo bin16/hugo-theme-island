@@ -6,7 +6,7 @@
 {{- if not (and (strings.HasPrefix .Destination "http://") (strings.HasPrefix .Destination "https://")) -}}
     {{- $img := .Page.Resources.Get .Destination -}}
 
-    {{- if reflect.IsImageResource $img -}}
+    {{- if reflect.IsImageResourceWithMeta $img -}}
         {{- $imgSrc = $img.RelPermalink -}}
         {{- $imgWidth = $img.Width -}}
         {{- $imgHeight = $img.Height -}}

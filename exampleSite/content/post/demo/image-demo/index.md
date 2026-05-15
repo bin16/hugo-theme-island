@@ -3,7 +3,8 @@ title: 'Image Demo'
 date: '2026-05-15T11:22:33+08:00'
 draft: false
 cover:
-    image: demo_b_8x.png
+    # image: demo_b_8x.png
+    image: /demo_e_8x.png
 tags:
     - demo
 authors:
@@ -39,6 +40,10 @@ Cras volutpat, odio at mattis sodales, est risus condimentum purus, et cursus au
 ```markdown
 ![demo image 256x128](./demo_b_4x.png)
 ```
+
+## Image starts with `/`
+
+![demo image 256x128](/demo_e_8x.png)
 
 ## More examples
 

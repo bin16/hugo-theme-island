@@ -1,21 +1,52 @@
-{{- if not .Params.cover.image -}}
-    <figure class="island-img min-h-20 relative border-b">
-        <a 
-            href="{{ .RelPermalink }}"
-            title="{{ .Title }}"
-            class="block w-full no-image"></a>
-        {{- partial "post-figure-authors.html" . -}}
-    </figure>
+{{- $imgSrc := "" -}}
+{{- $imgWidth := 750 -}}
+{{- $imgHeight := 500 -}}
+{{- $imgAlt := "" -}}
+{{- $imgTitle := "" -}}
 
-{{- else if or (strings.HasPrefix .Params.cover.image "http://") (strings.HasPrefix .Params.cover.image "https://") -}}
+{{- if .Params.cover.image -}}
+    
+    {{- $imgSrc := .Params.cover.image -}}
+    {{- $imgWidth := .Params.cover.width | default 750 -}}
+    {{- $imgHeight := .Params.cover.height | default 500 -}}
+    {{- $imgAlt := .Params.cover.height | default .Title -}}
+    {{- $imgTitle := "" -}}
+
+    {{/* URL */}}
+    {{- if or (strings.HasPrefix .Params.cover.image "http://") (strings.HasPrefix .Params.cover.image "https://") -}}
+        {{/* nothing to do */}}
+
+    {{/* ABSOLUTE PATH */}}
+    {{- else if strings.HasPrefix .Params.cover.image "/" -}}
+        {{/* nothing to do */}}
+
+    {{/* FILENAME */}}
+    {{- else -}}
+
+        {{- $cover := .Resources.Get $imgSrc -}}
+        {{- if not $cover -}}
+            {{/* FIND IN assets DIR */}}
+            {{- $cover = resources.GetMatch $imgSrc -}}
+        {{- end -}}
+
+        {{- if $cover -}}
+            {{- $imgSrc = $cover.RelPermalink -}}
+            {{- if reflect.IsImageResourceWithMeta $cover -}}
+                {{- $imgWidth = $cover.Width -}}
+                {{- $imgHeight = $cover.Height -}}
+            {{- end -}}
+            {{/* COULD BE SVG */}}
+        {{- end -}}
+
+    {{- end -}}
 
     <figure class="island-img relative border-b">
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="block">
             <img 
-                src="{{ .Params.cover.image }}" 
-                alt="{{ .Params.cover.alt | default .Title }}" 
-                width="{{ .Params.cover.width | default 750 }}"
-                height="{{ .Params.cover.height | default 500 }}"
+                src="{{ $imgSrc }}" 
+                alt="{{ $imgAlt }}" 
+                width="{{ $imgWidth }}"
+                height="{{ $imgHeight }}"
                 class="block mx-auto w-full object-cover">
         </a>
 
@@ -23,33 +54,11 @@
     </figure>
 
 {{- else -}}
-
-    {{- $imgWidth := .Params.cover.width | default 750 -}}
-    {{- $imgHeight := .Params.cover.height | default 500 -}}
-    {{- $cover := .Resources.GetMatch .Params.cover.image -}}
-    {{- if not $cover -}}
-        {{- $cover = resources.GetMatch .Params.cover.image -}}
-    {{- end -}}
-
-    {{- if $cover -}}
-        {{- if reflect.IsImageResourceWithMeta $cover -}}
-            {{- $imgWidth = $cover.Width -}}
-            {{- $imgHeight = $cover.Height -}}
-        {{- end -}}
-
-        <figure class="island-img relative border-b">
-            <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="block">
-                <img 
-                    src="{{ $cover.RelPermalink }}" 
-                    alt="{{ .Params.cover.alt | default .Title }}" 
-                    width="{{ $imgWidth }}"
-                    height="{{ $imgHeight }}"
-                    class="block mx-auto w-full object-cover">
-            </a>
-
-            {{- partial "post-figure-authors.html" . -}}
-        </figure>
-
-    {{- end -}}
-
+    <figure class="island-img min-h-20 relative border-b">
+        <a 
+            href="{{ .RelPermalink }}"
+            title="{{ .Title }}"
+            class="block w-full no-image"></a>
+        {{- partial "post-figure-authors.html" . -}}
+    </figure>
 {{- end -}}

@@ -12,7 +12,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla a arcu s
 
 Donec vulputate dolor non massa condimentum, nec posuere justo malesuada. Maecenas vitae vehicula tortor. Maecenas porttitor facilisis neque sit amet fermentum. Quisque dictum tincidunt lacus, at iaculis risus fermentum sed. Vestibulum pellentesque, velit non vestibulum placerat, urna est tincidunt purus, id consequat ante tellus in massa. Vestibulum sit amet tincidunt neque, sed consequat eros. Aliquam euismod aliquet malesuada.
 
-![fakeimg](https://fakeimg.pl/640x480/ "fakeimg.pl/640x480/")
+![demo image](https://picsum.photos/600/400 "https://picsum.photos/600/400")
 
 Quisque orci sem, auctor et ipsum laoreet, malesuada efficitur lectus. Phasellus euismod ligula sit amet odio ultricies fringilla. Nulla dolor dui, vulputate tempor ex in, posuere molestie augue. Sed accumsan felis tincidunt, gravida turpis in, vehicula est. In ac laoreet libero. Suspendisse potenti. Duis sed nisl vehicula, tempus lectus non, aliquet lorem. Integer elementum condimentum interdum. Duis turpis nibh, vehicula id facilisis ac, consequat ut tellus. Curabitur eget semper enim. Aliquam quis felis odio. Sed luctus tellus turpis, quis mattis ante rutrum sit amet. Suspendisse potenti. Praesent dignissim vel nisl sed vulputate.
 

@@ -1,34 +1,45 @@
-{{- if not .Params.cover.image -}}
-    {{/*  do nothing  */}}
+{{- if .Params.cover.image -}}
+    
+    {{- $imgSrc := .Params.cover.image -}}
+    {{- $imgWidth := .Params.cover.width -}}
+    {{- $imgHeight := .Params.cover.height -}}
+    {{- $imgAlt := .Params.cover.height | default .Title -}}
 
-{{- else if or (strings.HasPrefix .Params.cover.image "http://") (strings.HasPrefix .Params.cover.image "http://") -}}
+    {{/* URL */}}
+    {{- if or (strings.HasPrefix .Params.cover.image "http://") (strings.HasPrefix .Params.cover.image "https://") -}}
+        {{/* nothing to do */}}
 
-    {{- $cover := resources.GetRemote .Params.cover.image -}}
-    {{- if $cover -}}
-        <meta property="og:image" content="{{ .Params.cover.image }}" />
-        <meta property="og:image:width" content="{{ .Params.cover.width | default 750 }}" />
-        <meta property="og:image:height" content="{{ .Params.cover.width | default 500 }}" />
-        <meta property="og:image:alt" content="{{ .Params.cover.alt | default .Title }}" />
-    {{- end -}}
+    {{/* ABSOLUTE PATH */}}
+    {{- else if strings.HasPrefix .Params.cover.image "/" -}}
+        {{/* nothing to do */}}
 
-{{- else -}}
+    {{/* FILENAME */}}
+    {{- else -}}
 
-    {{- $cover := .Resources.GetMatch .Params.cover.image -}}
-    {{- if not $cover -}}
-        {{- $cover := resources.GetMatch .Params.cover.image -}}
-    {{- end -}}
-
-    {{- if $cover -}}
-        <meta property="og:image" content="{{ $cover.RelPermalink }}" />
-        {{- if reflect.IsImageResourceWithMeta $cover -}}
-            <meta property="og:image:width" content="{{ $cover.Width }}" />
-            <meta property="og:image:height" content="{{ $cover.Height }}" />
-        {{- else -}}
-            <meta property="og:image:width" content="{{ .Params.cover.width | default 750 }}" />
-            <meta property="og:image:width" content="{{ .Params.cover.height | default 500 }}" />
+        {{- $cover := .Resources.Get $imgSrc -}}
+        {{- if not $cover -}}
+            {{/* FIND IN assets DIR */}}
+            {{- $cover = resources.GetMatch $imgSrc -}}
         {{- end -}}
-        <meta property="og:image:alt" content="{{ .Params.cover.alt | default .Title }}" />
+
+        {{- if $cover -}}
+            {{- $imgSrc = $cover.RelPermalink -}}
+            {{- if reflect.IsImageResourceWithMeta $cover -}}
+                {{- $imgWidth = $cover.Width -}}
+                {{- $imgHeight = $cover.Height -}}
+            {{- end -}}
+            {{/* COULD BE SVG */}}
+        {{- end -}}
 
     {{- end -}}
+
+    <meta property="og:image" content="{{ $imgSrc }}" />
+    {{- with $imgWidth -}}
+        <meta property="og:image:width" content="{{ . }}" />
+    {{- end -}}
+    {{- with $imgHeight -}}
+        <meta property="og:image:height" content="{{ . }}" />
+    {{- end -}}
+    <meta property="og:image:alt" content="{{ $imgAlt }}" />
 
 {{- end -}}
