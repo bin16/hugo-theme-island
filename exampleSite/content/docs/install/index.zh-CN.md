@@ -7,8 +7,6 @@ draft: false
 categories:
     - docs
 tags:
-    - Hugo
-    - Hugo/Theme
     - git
     - Installation
 cover:

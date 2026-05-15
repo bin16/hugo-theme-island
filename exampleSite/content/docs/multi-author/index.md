@@ -13,7 +13,6 @@ tags:
     - multi-author
     - taxonomies
     - avatar
-    - taxonomies
 authors:
     - bob
 ---

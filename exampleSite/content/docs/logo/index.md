@@ -12,7 +12,6 @@ categores:
 tags:
     - logo
     - multilingual
-    - assets
 authors:
     - alice
 ---

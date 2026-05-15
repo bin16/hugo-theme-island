@@ -1,9 +1,9 @@
-baseURL = "https://hugo-theme-island.netlify.app/"
-locale = "en-us"
-title = "ExampleSite"
+baseURL     = "https://hugo-theme-island.netlify.app/"
+locale      = "en-us"
+title       = "ExampleSite"
 description = "demo site of hugo-theme-island"
-theme = "hugo-theme-island"
-themesdir = "../.."
+theme       = "hugo-theme-island"
+themesdir   = "../.."
 
 summaryLength = 128
 
@@ -45,54 +45,56 @@ summaryLength = 128
 #       icon = "user-circle"
 
 [languages]
-  [languages.en]
+    [languages.en]
     disabled = false
-    locale = "en"
+    locale   = "en"
     # languageDirection = ""
-    label = "English"
+    label  = "English"
     weight = 0
-    title = "ExampleSite"
-    [languages.en.params]
-      logo = "demo-logo.png"
-      dateFormat = "Jan 02"
-      description = "demo site of hugo-theme-island"
-  [languages.zh-CN]
+    title  = "ExampleSite"
+        [languages.en.params]
+        logo        = "demo-logo.png"
+        dateFormat  = "Jan 02"
+        description = "demo site of hugo-theme-island"
+    [languages.zh-CN]
     disabled = false
-    locale = "zh-CN"
+    locale   = "zh-CN"
     # languageDirection = ""
-    label = "中文"
-    title = "示例网站"
+    label  = "中文"
+    title  = "示例网站"
     weight = 10
-    [languages.zh-CN.params]
-      logo = "demo-logo.png"
-      dateFormat = "01-02"
-      description = "hugo-theme-island 主题示例以及文档"
+        [languages.zh-CN.params]
+        logo        = "demo-logo.png"
+        dateFormat  = "01-02"
+        description = "hugo-theme-island 主题示例以及文档"
 
 [pagination]
-  disableAliases = false
-  pagerSize = 5
-  path = "page"
+disableAliases = false
+pagerSize      = 5
+path           = "page"
 
 [permalinks]
-  authors = "/u/:slug/"
+authors = "/u/:slug/"
 
 [Taxonomies]
-  tag = "tags"
-  category = "categories"
-  author = "authors"
+tag      = "tags"
+category = "categories"
+author   = "authors"
 
 [params]
-  logo = "demo-logo.png"
-  mainSections = ["docs"]
-  dateFormat = "01/02"
-  description = "xxx"
+logo = "demo-logo.png"
+mainSections = [
+    "docs",
+]
+dateFormat = "01/02"
+description = "xxx"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.parser]
-      wrapStandAloneImageWithinParagraph = false
-      [markup.goldmark.parser.attribute]
-        block = true
-      [markup.highlight]
-        style = "github"
-        noClasses = false
+    [markup.highlight]
+    style     = "github"
+    noClasses = false
+    [markup.goldmark]
+        [markup.goldmark.parser]
+        wrapStandAloneImageWithinParagraph = false
+            [markup.goldmark.parser.attribute]
+            block = true

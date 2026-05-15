@@ -10,7 +10,6 @@ categories:
     - docs
 tags:
     - homepage
-    - mainSections
 authors:
     - bob
 ---
