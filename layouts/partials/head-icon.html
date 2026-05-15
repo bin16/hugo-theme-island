@@ -1,0 +1,31 @@
+
+{{- if site.Params.logo -}}
+    {{- if or (strings.HasPrefix site.Params.logo "http://") (strings.HasPrefix site.Params.logo "http://") -}}
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.logo }}" />
+    {{- else -}}
+        {{- $logo := resources.GetMatch site.Params.logo -}}
+        {{- if reflect.IsImageResourceProcessable $logo -}}
+            {{- with $logo.Process "resize 180x png" -}}
+                <link rel="apple-touch-icon" sizes="180x180" href="{{ .RelPermalink }}">
+            {{- end -}}
+            {{- with $logo.Process "resize 32x png" -}}
+                <link rel="icon" type="image/png" sizes="32x32" href="{{ .RelPermalink }}" />
+            {{- end -}}
+            {{- with $logo.Process "resize 16x png" -}}
+                <link rel="icon" type="image/png" sizes="16x16" href="{{ .RelPermalink }}" />
+            {{- end -}}
+        {{- else if reflect.IsImageResourceWithMeta $logo -}}
+            <link rel="icon" type="image/png" sizes="{{ $logo.Width }}x{{ $logo.Height }}" href="{{ $logo.RelPermalink }}" />
+        {{- else if $logo -}}
+            <link rel="icon" type="image/png" href="{{ $logo.RelPermalink }}" />
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- with resources.Get "site.webmanifest" -}}
+    <link rel="manifest" href="{{ .RelPermalink }}" />
+{{- end -}}
+
+{{- with resources.Get "favicon.ico" -}}
+    <link rel="shortcut icon" href="{{ .RelPermalink }}" type="image/x-icon" />
+{{- end -}}
